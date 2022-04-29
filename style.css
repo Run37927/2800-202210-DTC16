@@ -1,0 +1,17 @@
+body{
+    background-color: #f5f5f5;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 900px 650px; 
+    font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+}
+
+nav{
+    float: right;
+    text-align: right;
+}
+
+.control-panel {
+    float: right;
+   margin-top: 80px;
+}
