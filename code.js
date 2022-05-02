@@ -42,7 +42,7 @@ function handleControl(e) {
         } audio.play();
     } else if (id == "pause") {
         pushUnpushButtons("pause", ["play"]);
-        audio.src = audios.rainday
+        audio.src = audios.boarding;
         audio.load();
         audio.play();
     } else if (id == "loop") {
