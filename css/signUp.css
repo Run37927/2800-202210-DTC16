@@ -127,7 +127,7 @@ input::placeholder {
 @media screen and (max-width: 600px) {
     .formDiv {
         width: 90%;
-        border-radius: 10px;
+        border-radius: 1px;
     }
 
     .formWrapper {
