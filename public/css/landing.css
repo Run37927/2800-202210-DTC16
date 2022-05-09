@@ -1,0 +1,187 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+section {
+    padding: 7em 0;
+}
+
+.container {
+    width: 85%;
+    max-width: 65em;
+    margin: 0 auto;
+}
+
+.split {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.split > * {
+    flex-basis: 30%;
+    min-width: 15em;
+}
+
+.spacing > * + * {
+    margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: .5em 1.25em;
+    background-color: var(--clr-accent, #6389d4);
+    color: var(--clr-text, #fff);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    border-radius: .25em;
+    transition: 
+    transform 250ms ease-in-out,
+    opacity 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.1);
+    opacity: .5;
+}
+
+.primary-title {
+    font-size: 4rem;
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    color: #17353d;
+    margin-bottom: 5rem;
+}
+
+
+.hero {
+    color: white;
+    text-align: center;
+    padding: 15em 0;
+    background: #F5F5F5;
+    background-image: 
+    url(../images/privateJet.jpg);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.featured {
+    background: #eee
+}
+
+.featured__item {
+    display: block;
+    position: relative;
+    transform: scale(.85);
+    transition: transform 250ms ease-in-out;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+   
+}
+
+.featured__details span.price { 
+    display: block;
+    font-weight: 700;
+    font-size: 1rem; 
+}
+
+.featured__details {
+    opacity: 0;
+    transition: opacity 250ms linear;
+}
+
+.featured__item:hover .featured__details,
+.featured__item:focus .featured__details {
+    opacity: 1;
+}
+
+.featured__item:hover,
+.featured__item:focus {
+    transform: scale(1);
+}
+
+.featured__item::after {
+    content: '';
+    position: absolute;
+    padding: 80% 80% 0 0;
+    border-radius: 50%;
+    background: #9cbbf7;
+    left: 2%;
+    top: 0;
+    z-index: -1;
+}
+
+.product {
+    background: 
+    radial-gradient(var(--clr-inner, rgb(187, 201, 228)), var(--clr-outer, rgb(220, 220, 220)));
+    padding: 3em;
+    border-radius: 3em;
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+@media (min-width: 45em) {
+    .product__image {
+        float: right;
+        width: 50%;
+        margin: 0 -2em 0 0;
+    }
+}
+
+
+.product__title {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 .2em rgba(red, green, blue, alpha);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.air-travel {
+    --clr-inner: rgb(187, 201, 228);
+    --clr-outer: rgb(220, 220, 220);
+}
+
+.outdoor {
+    --clr-inner: rgb(187, 201, 228);
+    --clr-outer: rgb(255, 185, 113);
+}
+
+.beach {
+    --clr-inner: rgb(187, 201, 228);
+    --clr-outer: rgb(140, 196, 226);
+}
