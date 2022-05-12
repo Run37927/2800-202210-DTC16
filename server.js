@@ -79,7 +79,8 @@ mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
   })
 const userLoginSchema = new mongoose.Schema({
   userEmail: String,
-  userPassword: String
+  userPassword: String,
+  userIsAdmin: Boolean
 });
 const userLoginModel = mongoose.model("model", userLoginSchema, "userInfos");
 app.post("/requestlogin", function (req, res) {
@@ -111,6 +112,18 @@ app.post("/requestlogin", function (req, res) {
 app.get("/admin/:id", function(req, res){
     console.log("admin page sent to " + req.params.id)
     res.sendFile(__dirname+"/public/admin.html")
+})
+
+app.get("/fetchuserdata", function(req, res) {
+  
+  userLoginModel.find({ "userIsAdmin" : false}, function(err, userInfo) {
+    if (err) {
+      console.log("Error " + err);
+    } else {
+      console.log("Data " + JSON.stringify(userInfo));
+    }
+    res.send(userInfo);
+  })
 })
 
 // TODO: check if the user is user with DB
