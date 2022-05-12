@@ -12,7 +12,7 @@ app.use(
   })
 );
 
-app.use(express.static("./public"));
+app.use(express.static(__dirname + "/public"));
 
 
 const mongoose = require("mongoose");
@@ -61,6 +61,10 @@ app.post("/signuprequest", function (req, res) {
 });
 
 // User Login
+app.get('/login', function(req, res){
+  res.sendFile(__dirname + "/public/login.html")
+})
+
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 .then((ans) => {
     console.log("DB Connected Successfully")
@@ -83,13 +87,10 @@ app.post("/requestlogin", function (req, res) {
       if (err) console.log(err);
     //   console.log(userInfo[0].userIsAdmin)
     if (userInfo.length != 0){
+      res.send({userId: userInfo[0]._id, userIsAdmin: userInfo[0]._doc.userIsAdmin})
       if (userInfo[0]._doc.userIsAdmin) {
-          res.redirect("/admin")
-        //   res.sendFile(__dirname + "/public/admin.html");
           console.log(userInfo[0]._id + " has logged in as an admin");
         } else {
-            console.log(__dirname);
-            res.sendFile(__dirname + "/public/beach.html");
         console.log(userInfo[0]._id + " has logged in as a norm user");
       }
     }else{
@@ -100,8 +101,8 @@ app.post("/requestlogin", function (req, res) {
 });
 
 // Admin webpage
-app.get("/admin", function(req, res){
-    // console.log(1)
-    res.render("./admin.html"
-    )
+app.get("/admin/:id", function(req, res){
+    console.log(1)
+    res.sendFile(__dirname+"/public/admin.html", __dirname+"/public/css/admin.css")
+    // res.sendFile(__dirname+"/public/css/admin.css")
 })

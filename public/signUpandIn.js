@@ -1,6 +1,6 @@
- function registerUser(){
+ async function registerUser(){
     console.log("registerUser() executed")
-     $.ajax({
+     await $.ajax({
         url: "http://localhost:6050/signuprequest",
         type: "POST",
         data: {
@@ -10,22 +10,31 @@
         },
         success: console.log("user info sumbitted.", $("#name").val(), $("#email").val(), $("#password").val()),
       });
-    location.href = "./login.html"
+    location.href = "/login"
 }
 
-function loginUser() {
+async function loginUser() {
   console.log("loginUser() executed")
-  $.ajax({
+  await $.ajax({
      url: "http://localhost:6050/requestlogin",
      type: "POST",
      data: {
        email: $("#email").val(),
        password: $("#password").val()
      },
-     success: console.log("user info sumbitted.", $("#email").val(), $("#password").val()),
+     success: routeUserLogin,
    });
 }
-
+function routeUserLogin(data){
+  console.log(data.userIsAdmin)
+  if(data.userIsAdmin){
+    location.href = `/admin/${data.userId}`
+  }else if(!data.userIsAdmin){
+    location.href = `/beach/${data.userId}`
+  }else{
+    console.log("User not found")
+  }
+}
 function setup(){
     $("#registerUser").click(registerUser);
     $("#loginUser").click(loginUser)
