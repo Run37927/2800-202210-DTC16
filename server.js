@@ -53,12 +53,18 @@ app.post("/signuprequest", function (req, res) {
       userIsAdmin: false
     };
     dbo.collection("userInfos").insertOne(userInfoObj, function (err, res) {
-      if (err) throw err;
+      if (err) console.log(err);
       console.log("1 document inserted");
       db.close();
     });
   });
 });
+
+// User Sign Up
+app.get('/signup', function(req, res){
+  res.sendFile(__dirname + "/public/signup.html")
+})
+
 
 // User Login
 app.get('/login', function(req, res){

@@ -8,9 +8,9 @@
           email: $("#email").val(),
           password: $("#password").val()
         },
-        success: console.log("user info sumbitted.", $("#name").val(), $("#email").val(), $("#password").val()),
+        success: location.href = "/login"
       });
-    location.href = "/login"
+    
 }
 
 async function loginUser() {
