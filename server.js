@@ -100,9 +100,16 @@ app.post("/requestlogin", function (req, res) {
   )
 });
 
+// TODO: check if the user is admin with DB
 // Admin webpage
 app.get("/admin/:id", function(req, res){
-    console.log(1)
-    res.sendFile(__dirname+"/public/admin.html", __dirname+"/public/css/admin.css")
-    // res.sendFile(__dirname+"/public/css/admin.css")
+    console.log("admin page sent to " + req.params.id)
+    res.sendFile(__dirname+"/public/admin.html")
+})
+
+// TODO: check if the user is user with DB
+// User webpage
+app.get("/beach/:id", function(req, res){
+    console.log("beach page sent to " + req.params.id)
+    res.sendFile(__dirname+"/public/beach.html")
 })
