@@ -25,6 +25,7 @@ async function loginUser() {
      success: routeUserLogin,
    });
 }
+
 function routeUserLogin(data){
   console.log(data.userIsAdmin)
   if(data.userIsAdmin){
@@ -35,8 +36,11 @@ function routeUserLogin(data){
     console.log("User not found")
   }
 }
+
+
+
 function setup(){
     $("#registerUser").click(registerUser);
-    $("#loginUser").click(loginUser)
+    $("#loginUser").click(loginUser);
 }
 $(document).ready(setup);
