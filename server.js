@@ -129,7 +129,7 @@ app.get("/fetchuserdata", function(req, res) {
 
 // TODO: check if the user is user with DB
 // User webpage
-app.get("/beach/:id", function(req, res){
+app.get("/welcome/:id", function(req, res){
     console.log("beach page sent to " + req.params.id)
-    res.sendFile(__dirname+"/public/beach.html")
+    res.sendFile(__dirname+"/public/welcome.html")
 })
