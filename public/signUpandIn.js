@@ -33,7 +33,7 @@ function routeUserLogin(data){
   if(data.userIsAdmin){
     location.href = `/admin/${data.userId}`
   }else if(!data.userIsAdmin){
-    location.href = `/beach/${data.userId}`
+    location.href = `/welcome/${data.userId}`
   }else{
     console.log("User not found")
   }
