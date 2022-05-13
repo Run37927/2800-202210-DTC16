@@ -83,6 +83,7 @@ const userLoginSchema = new mongoose.Schema({
   userIsAdmin: Boolean
 });
 const userLoginModel = mongoose.model("model", userLoginSchema, "userInfos");
+
 app.post("/requestlogin", function (req, res) {
   console.log("user login requested", req.body);
   email = req.body.email;
