@@ -1,13 +1,9 @@
- url = "http://localhost:6050"
+ url = "https://imissmyvacay.herokuapp.com/"
  
  async function registerUser(){
     console.log("registerUser() executed")
      await $.ajax({
-<<<<<<< HEAD
         url: `${url}/signuprequest`,
-=======
-        url: `https://imissmyvacay.herokuapp.com/requestlogin`,
->>>>>>> 353aeebeb886d47e49acc54ac6aeb83e868017d1
         type: "POST",
         data: {
           name: $("#name").val(),
@@ -22,11 +18,7 @@
 async function loginUser() {
   console.log("loginUser() executed")
   await $.ajax({
-<<<<<<< HEAD
      url: `${url}/requestlogin`,
-=======
-     url: `https://imissmyvacay.herokuapp.com/requestlogin`,
->>>>>>> 353aeebeb886d47e49acc54ac6aeb83e868017d1
      type: "POST",
      data: {
        email: $("#email").val(),
