@@ -1,7 +1,9 @@
+ url = "http://localhost:6050"
+ 
  async function registerUser(){
     console.log("registerUser() executed")
      await $.ajax({
-        url: "http://localhost:6050/signuprequest",
+        url: `${url}/signuprequest`,
         type: "POST",
         data: {
           name: $("#name").val(),
@@ -16,7 +18,7 @@
 async function loginUser() {
   console.log("loginUser() executed")
   await $.ajax({
-     url: "http://localhost:6050/requestlogin",
+     url: `${url}/requestlogin`,
      type: "POST",
      data: {
        email: $("#email").val(),
