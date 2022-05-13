@@ -131,5 +131,5 @@ app.get("/fetchuserdata", function(req, res) {
 // User webpage
 app.get("/welcome/:id", function(req, res){
     console.log("beach page sent to " + req.params.id)
-    res.sendFile(__dirname+"/public/welcome.html")
+    res.sendFile(__dirname+"/public/welcomeback.html")
 })
