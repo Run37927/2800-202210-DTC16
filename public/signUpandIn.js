@@ -1,4 +1,4 @@
- url = "https://imissmyvacay.herokuapp.com/"
+ url = "https://imissmyvacay.herokuapp.com"
  
  async function registerUser(){
     console.log("registerUser() executed")
