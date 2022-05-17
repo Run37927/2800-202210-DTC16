@@ -89,7 +89,12 @@ audio.src = "/audios/airplaneAnnoucement.mp3";
 
 
 function setup() {
-    alert("please rotate your phone right now")
+    var alerted = true;
+    if (alerted) {
+        alert("please rotate your phone right now");
+    }
+    alerted = false;
+   
     // location.href = "/monitor/:id"
 }
 
