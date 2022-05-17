@@ -15,19 +15,7 @@ function getMyLocation() {
     }
 }
 
-function displayLocation(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
 
-    // var div = document.getElementById("location");
-    // div.innerHTML = "You are at latitude: " + latitude + ", longitude: " + longitude;
-
-    // var km = computeDistance(position.coords, FIJI);
-    // var distance = document.getElementById("distance");
-    // distance.innerHTML = "you are " + km + " km from paradise."
-
-    showMap(position.coords);
-}
 
 let map;
 function showMap(coords) {
@@ -45,6 +33,20 @@ function showMap(coords) {
     }
 
     map = new google.maps.Map(document.getElementById("map"), options);
+}
+
+function displayLocation(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    // var div = document.getElementById("location");
+    // div.innerHTML = "You are at latitude: " + latitude + ", longitude: " + longitude;
+
+    // var km = computeDistance(position.coords, FIJI);
+    // var distance = document.getElementById("distance");
+    // distance.innerHTML = "you are " + km + " km from paradise."
+
+    showMap(position.coords);
 }
 
 function displayError(error) {
