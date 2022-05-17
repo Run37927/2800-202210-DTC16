@@ -84,3 +84,10 @@ function degreesToRadians(degrees) {
 const audio = new Audio();
 audio.src = "./audios/airplaneAnnoucement.mp3";
 
+
+
+function setup() {
+    alert("please rotate your phone right now")
+}
+
+$(document).ready(setup);
