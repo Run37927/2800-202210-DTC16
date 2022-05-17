@@ -62,7 +62,7 @@ app.post("/signuprequest", function (req, res) {
 
 // User Sign Up
 app.get('/signup', function(req, res){
-  res.sendFile(__dirname + "/public/signup.html")
+  res.sendFile(__dirname + "/public/register.html")
 })
 
 
