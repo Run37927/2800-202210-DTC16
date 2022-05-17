@@ -84,10 +84,3 @@ function degreesToRadians(degrees) {
 const audio = new Audio();
 audio.src = "./audios/airplaneAnnoucement.mp3";
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "150px";
-  }
-  
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }

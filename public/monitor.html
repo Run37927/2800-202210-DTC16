@@ -15,17 +15,17 @@
             body {
                 background: url('./images/monitor.png');
                 background-position: 0 -20px;
-                background-size: 60%;
+                background-size: cover;
                 position: relative;
             }
 
             #map {
                 border-radius: 15px;
-                width: 223px;
-                height: 140px;
+                width: 372px;
+                height: 229px;
                 position: absolute;
-                top: 62px;
-                left: 144px;
+                top: 121px;
+                left: 241px;
             }
 
             .buttons {
@@ -58,48 +58,25 @@
                 opacity: .8;
             }
 
-            #openNav {
-                cursor: pointer;
+     
+            .nav-bar {
                 position: absolute;
-                right: 20px;
-                top: 10px;
+                right: 0;
+                height: 100vh;
+                width: 60px;
+                background: #E5E4E2;
             }
 
-            /* The side navigation menu */
-            .sidenav {
-                height: 100%; /* 100% Full-height */
-                width: 0; /* 0 width - change this with JavaScript */
-                position: fixed; /* Stay in place */
-                z-index: 1; /* Stay on top */
-                top: 0; /* Stay at the top */
-                right: 0;
-                background-color: #FFF;
-                opacity: 0.9;
-                overflow-x: hidden; /* Disable horizontal scroll */
-                padding-top: 90px; /* Place content 60px from the top */
-                transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-                font-weight: 600;
+            .nav-bar a {
+                position: absolute;
+                top: 150px;
+                left: 17px;
             }
-            .sidenav a {
-                padding: 10px 8px 10px 32px;
-                text-decoration: none;
-                font-size: 25px;
-                color: #818181;
-                display: block;
-                transition: 0.3s;
-            }
-            /* When you mouse over the navigation links, change their color */
-            .sidenav a:hover{
+            .nav-bar a:link{
                 color: black;
             }
-
-            /* Position and style the close button (top right corner) */
-            .sidenav .closebtn {
-                position: absolute;
-                top: 0;
-                right: 25px;
-                font-size: 36px;
-                margin-left: 50px;
+            .nav-bar a:visited{
+                color: black;
             }
         </style>
     </head>
@@ -108,21 +85,14 @@
 
         <div id="distance"></div>
         <div class="buttons">
-            <button class="playBtn" onclick="audio.play()"><img src="./images/play.png" alt="play" width="50px" height="50px"></button>
-            <button class="pauseBtn" onclick="audio.pause()"><img src="./images/pause.png" alt="pause" width="50px" height="50px"></button>
+            <button class="playBtn" onclick="audio.play()"><img src="./images/play.png" alt="play" width="75px" height="75px"></button>
+            <button class="pauseBtn" onclick="audio.pause()"><img src="./images/pause.png" alt="pause" width="75px" height="75px"></button>
         </div>
 
-        <nav class="nav-bar">
-            <span onclick="openNav()" id="openNav">
-                <i class="fa fa-navicon fa-2x"></i>
-            </span>
-        </nav>
-
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="./welcomeback.html">Home</a>
+        
+        <div class="nav-bar">
+            <a href="./welcomeback.html"><i class="fa fa-home fa-2x"></i></a>
         </div>
-
 
         <div id="map"></div>
 
