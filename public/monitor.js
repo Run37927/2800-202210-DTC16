@@ -88,6 +88,7 @@ audio.src = "./audios/airplaneAnnoucement.mp3";
 
 function setup() {
     alert("please rotate your phone right now")
+    location.href = "/monitor"
 }
 
 $(document).ready(setup);
