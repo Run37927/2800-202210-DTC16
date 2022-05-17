@@ -84,13 +84,13 @@ function degreesToRadians(degrees) {
 
 
 const audio = new Audio();
-audio.src = "./audios/airplaneAnnoucement.mp3";
+audio.src = "/audios/airplaneAnnoucement.mp3";
 
 
 
 function setup() {
     alert("please rotate your phone right now")
-    location.href = "/monitor"
+    // location.href = "/monitor/:id"
 }
 
 $(document).ready(setup);
