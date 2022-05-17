@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/landing.css">
+       
     </head>
     <body>
         <header class="hero">
@@ -56,11 +57,9 @@
                 <div class="container">
                     <h2 class="section-title">Our products</h2>
 
-                    <article class="product air-travel spacing">
-                        <img src="/images/airTravvel.png" alt="" class="product__image">
-                        <h3 class="product__title">Virtual Air Travel</h3>
-                        <p class="product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <a href="/monitor" class="btn">TRY NOW</a>
+                    <article id="air-travel-box" class="product air-travel spacing">
+                     
+
                     </article>
 
                     <article class="product outdoor spacing">
@@ -79,5 +78,15 @@
                 </div>
             </section>
         </main>
+        <script> 
+            console.log(window.location.href.split('/'));
+            airBox = document.getElementById("air-travel-box");
+            airBox.innerHTML = `
+            <img src="/images/airTravvel.png" alt="" class="product__image">
+                        <h3 class="product__title">Virtual Air Travel</h3>
+                        <p class="product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a href='/monitor/${window.location.href.split('/')[4]}'   class="btn">TRY NOW</a>
+                        `
+            // document.getElementById("air-travel-box").append(`<a href='/monitor/${window.location.href.split('/')[4]}'   class="btn">TRY NOW</a>`) </script>
     </body>
 </html>
