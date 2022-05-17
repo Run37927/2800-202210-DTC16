@@ -1,4 +1,4 @@
- url = "https://imissmyvacay.herokuapp.com"
+ url = "http://localhost:6050"
  
  async function registerUser(){
     console.log("registerUser() executed")
@@ -12,7 +12,6 @@
         },
         success: location.href = "/login"
       });
-    
 }
 
 async function loginUser() {
