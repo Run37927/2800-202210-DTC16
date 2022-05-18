@@ -184,9 +184,13 @@ function dosecret() {
         draggable: true,
         geodesic: true,
       });
+
+      easter.style.backgroundColor = "red"
+      easter.value = "EASTER"
 }
 const easter = document.querySelector(".easter");
 easter.onclick = dosecret;
+
 
 
 function displayLocation(position) {
@@ -246,14 +250,12 @@ const audio = new Audio();
 audio.src = "/audios/airplaneAnnoucement.mp3";
 
 
-
 function setup() {
     var alerted = true;
     if (alerted) {
         alert("please rotate your phone right now");
     }
     alerted = false;
-
     // location.href = "/monitor/:id"
 }
 
