@@ -91,7 +91,7 @@ section {
     padding: 15em 0;
     background: #F5F5F5;
     background-image: 
-    url(../images/privateJet.jpg);
+    url(../images/jet.jpg);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: cover;
@@ -160,11 +160,8 @@ section {
         width: 50%;
         margin: 0 -2em 0 0;
     }
-
-    .hero {
-        background-size: cover;
-    }
 }
+
 
 
 .product__title {
