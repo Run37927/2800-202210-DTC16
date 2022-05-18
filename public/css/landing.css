@@ -91,9 +91,9 @@ section {
     padding: 15em 0;
     background: #F5F5F5;
     background-image: 
-    url(../images/jet.jpg);
+    url(../images/jet1.jpg);
     background-blend-mode: multiply;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
 }
