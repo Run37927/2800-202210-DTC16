@@ -93,7 +93,7 @@ section {
     background-image: 
     url(../images/jet1.jpg);
     background-blend-mode: multiply;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }

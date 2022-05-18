@@ -1,9 +1,10 @@
 window.onload = getMyLocation;
 
-const FIJI = {
-    latitude: 16.5004,
-    longitude: 151.7415
-};
+const blueCoords = [
+    { lat: 25.774, lng: -60.19 },
+    { lat: 18.466, lng: -46.118 },
+    { lat: 32.321, lng: -44.757 },
+  ];
 
 var watchID = null;
 function watchLocation() {
@@ -15,6 +16,12 @@ function clearWatch() {
         watchID = null;
     }
 }
+
+function backHome() {
+    window.location.href = "/welcomeback.html"
+}
+const homeBtn = document.getElementById("home");
+homeBtn.onclick = backHome;
 
 function getMyLocation() {
     if (navigator.geolocation) {
@@ -160,7 +167,26 @@ function showMap(coords) {
         addMarker(event.latLng, map);
     });
     addMarker(location, map);
+
+ 
 }
+
+
+function dosecret() {
+    new google.maps.Polygon({
+        map,
+        paths: blueCoords,
+        strokeColor: "#FF0000",
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: "#FF0000",
+        fillOpacity: 0.35,
+        draggable: true,
+        geodesic: true,
+      });
+}
+const easter = document.querySelector(".easter");
+easter.onclick = dosecret;
 
 
 function displayLocation(position) {
