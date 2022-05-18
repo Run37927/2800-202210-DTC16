@@ -1,15 +1,28 @@
 window.onload = getMyLocation;
 
-
 const FIJI = {
     latitude: 16.5004,
     longitude: 151.7415
 };
 
+var watchID = null;
+function watchLocation() {
+    watchID = navigator.geolocation.watchPosition(displayLocation, displayError);
+}
+function clearWatch() {
+    if (watchID) {
+        navigator.geolocation.clearWatch(watchID);
+        watchID = null;
+    }
+}
 
 function getMyLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(displayLocation, displayError);
+        // navigator.geolocation.getCurrentPosition(displayLocation, displayError);
+        var watchButton = document.getElementById("watch");
+        watchButton.onclick = watchLocation;
+        var clearWatchButton = document.getElementById("clearWatch");
+        clearWatchButton.onclick = clearWatch;
     } else {
         alert("no geolocation support here")
     }
@@ -17,7 +30,33 @@ function getMyLocation() {
 
 
 
+const labels = "U";
+let labelIndex = 0;
+const imageMarker =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/library_maps.png";
+
 let map;
+
+function addMarker(location, map) {
+    // Add the marker at the clicked location, and add the next-available label
+    // from the array of alphabetical characters.
+    new google.maps.Marker({
+        position: location,
+        label: labels[labelIndex++ % labels.length],
+        map: map,
+        icon: imageMarker
+    });
+}
+
+function scrollMapToPosition(coords) {
+    var latitude = coords.latitude;
+    var longitude = coords.longitude;
+    var latlong = new google.maps.LatLng(latitude, longitude);
+
+    map.panTo(latlong);
+    addMarker(latlong, map);
+}
+
 function showMap(coords) {
     console.log(coords.latitude);
 
@@ -28,12 +67,101 @@ function showMap(coords) {
 
     var options = {
         zoom: 10,
+        disableDefaultUI: true,
+        styles: [
+            { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+            { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+            { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+            {
+                featureType: "administrative.locality",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#d59563" }],
+            },
+            {
+                featureType: "poi",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#d59563" }],
+            },
+            {
+                featureType: "poi.park",
+                elementType: "geometry",
+                stylers: [{ color: "#263c3f" }],
+            },
+            {
+                featureType: "poi.park",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#6b9a76" }],
+            },
+            {
+                featureType: "road",
+                elementType: "geometry",
+                stylers: [{ color: "#38414e" }],
+            },
+            {
+                featureType: "road",
+                elementType: "geometry.stroke",
+                stylers: [{ color: "#212a37" }],
+            },
+            {
+                featureType: "road",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#9ca5b3" }],
+            },
+            {
+                featureType: "road.highway",
+                elementType: "geometry",
+                stylers: [{ color: "#746855" }],
+            },
+            {
+                featureType: "road.highway",
+                elementType: "geometry.stroke",
+                stylers: [{ color: "#1f2835" }],
+            },
+            {
+                featureType: "road.highway",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#f3d19c" }],
+            },
+            {
+                featureType: "transit",
+                elementType: "geometry",
+                stylers: [{ color: "#2f3948" }],
+            },
+            {
+                featureType: "transit.station",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#d59563" }],
+            },
+            {
+                featureType: "water",
+                elementType: "geometry",
+                stylers: [{ color: "#17263c" }],
+            },
+            {
+                featureType: "water",
+                elementType: "labels.text.fill",
+                stylers: [{ color: "#515c6d" }],
+            },
+            {
+                featureType: "water",
+                elementType: "labels.text.stroke",
+                stylers: [{ color: "#17263c" }],
+            },
+        ],
         center: location,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        mapTypeId: google.maps.MapTypeId.HYBRID
     }
 
     map = new google.maps.Map(document.getElementById("map"), options);
+
+    google.maps.event.addListener(map, "click", (event) => {
+        addMarker(event.latLng, map);
+    });
+    addMarker(location, map);
 }
+
 
 function displayLocation(position) {
     var latitude = position.coords.latitude;
@@ -46,8 +174,13 @@ function displayLocation(position) {
     // var distance = document.getElementById("distance");
     // distance.innerHTML = "you are " + km + " km from paradise."
 
-    showMap(position.coords);
+    if (map == null) {
+        showMap(position.coords);
+    } else {
+        scrollMapToPosition(position.coords);
+    }
 }
+
 
 function displayError(error) {
     var errorTypes = {
@@ -94,7 +227,7 @@ function setup() {
         alert("please rotate your phone right now");
     }
     alerted = false;
-   
+
     // location.href = "/monitor/:id"
 }
 
