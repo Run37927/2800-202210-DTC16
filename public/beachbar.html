@@ -16,7 +16,7 @@
                 <form>
                     <!-- Brings you back to the landing page -->
                     <input type="button" value="Home" id="home">
-                    <!-- Might need a stop all button to stop all sounds -->
+                    <!-- Prototype 1 Drinks button -->
                     <input type="button" value="Drinks" id="drinks">
                 </form>
             </div>
@@ -28,11 +28,17 @@
             <button class="pauseButton" onclick="backgroundAudio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button>
         </div>
 
-        <FORM name="windowDrinkEvent">  
-            <input type="text" name="txtpath"/>  
-            <input type="button" value="Open" name="btnOpenPopup" onClick="OpenNewWindow(txtpath.value)" />  
-         </FORM>  
+        <!-- Popup Drink Menu, Prototype 2 Drinks Button -->
+        <div class="popup" onclick="drinkMenu()"><button>Drinks</button>
+            <span class="popuptext" id="myPopup">
+                <button class="vodka" onclick="drinkOneAudio.play()">Vodka Coke</button>
+                <button class="champagne" onclick="drinkTwoAudio.play()">Champagne</button>
+                <button class="soda" onclick="drinkThreeAudio.play()">Soda</button>
+                <button class="beer" onclick="drinkFourAudio.play()">Beer</button>
+            </span>
+        </div>
         
+        <!-- Pending Removal -->
         <!-- Buttons for interactions -->
         <!-- <div class="bartenderBtn"> -->
             <!-- <button class="playButton" onclick="audio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button> -->

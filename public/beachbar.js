@@ -15,10 +15,10 @@ audio.src = "./assets/bar_large_busy_dance_music.mp3";
 // bar_small_busy_r&b_music.mp3
 
 // For Popup Drink Menu Options
-function OpenNewWindow(MyPath)  
-{  
-   window.open(MyPath,"","toolbar=no,status=no,menubar=no,location=center,scrollbars=no,resizable=no,height=500,width=657");  
-}  
+function drinkMenu() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
 
 // Vodka Coke
 const drinkOneAudio = new Audio();
@@ -40,7 +40,7 @@ audio.src = "./assets/field_reports_pub_pint_pour_218.mp3"
 function setup() {
     var alerted = true;
     if (alerted) {
-        alert("please rotate your phone right now");
+        alert("Please Rotate Your Phone.");
     }
     alerted = false;
 }
