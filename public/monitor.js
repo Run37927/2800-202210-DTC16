@@ -1,5 +1,4 @@
 window.onload = getMyLocation;
-
 const blueCoords = [
     { lat: 25.774, lng: -60.19 },
     { lat: 18.466, lng: -46.118 },
@@ -18,7 +17,7 @@ function clearWatch() {
 }
 
 function backHome() {
-    window.location.href = "/welcomeback.html"
+    window.location.href = `/welcome/${window.location.href.split('/')[4]}`
 }
 const homeBtn = document.getElementById("home");
 homeBtn.onclick = backHome;
@@ -247,7 +246,7 @@ function degreesToRadians(degrees) {
 
 
 const audio = new Audio();
-audio.src = "/audios/airplaneAnnoucement.mp3";
+audio.src = "../audios/airplaneAnnoucement.mp3";
 
 
 function setup() {
