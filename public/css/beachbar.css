@@ -18,14 +18,6 @@ nav{
 
 }
 
-.bartenderBtn {
-    position: absolute; left: 90px; top: 100px;
-
-}
-
-.drinkBtn {
-    position: absolute; left: 50px; top: 200px;
-}
 
 .playButton {
     transition: transform 250ms ease-in-out, opacity 250ms linear;
@@ -117,37 +109,25 @@ form input:active {
 /* Popup container */
 .popup {
     position: absolute; top: 22vh;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
   }
   
   /* The actual popup (appears on top) */
   .popup .popuptext {
     visibility: hidden;
-    width: 160px;
+    width: 120px;
     background-color: #555;
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 1vh 1vw 1vh 15vw;
-    position: absolute; left: 50vw;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
-  }
-  
-  /* Popup arrow */
-  /* .popup .popuptext::after {
-    content: "";
+    padding: 1vh 1vw 1vh 1vw;
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  } */
+    z-index: 1;
+    bottom: -400%;
+    /* left: 50%; */
+    /* margin-left: -80px; */
+  }
   
   /* Toggle this class when clicking on the popup container (hide and show the popup) */
   .popup .show {
@@ -166,3 +146,84 @@ form input:active {
     from {opacity: 0;}
     to {opacity:1 ;}
   }
+
+  /* As per interaction button */
+
+.bartenderBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 91vw; top: 34vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.vodkaCokeBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 68.5vw; top: 31vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.champagneBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 81.5vw; top: 66vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.sodaBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 71vw; top: 77vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.beerBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 55vw; top: 28vh;
+    cursor:pointer;
+    border: none !important;
+    font-size:0;
+}
+
+.shotBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 39vw; top: 66vh;
+    cursor:pointer;
+    border: none !important;
+    font-size:0;
+}
+
+/* .bartenderBtn {
+    position: absolute; left: 90px; top: 100px;
+
+}
+
+.drinkBtn {
+    position: absolute; left: 50px; top: 200px;
+} */

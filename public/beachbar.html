@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Beach Bar</title>
         <link rel="stylesheet" href="./css/beachbar.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
         <!-- Buttons on the bottom right -->
@@ -17,17 +18,9 @@
                     <!-- Brings you back to the landing page -->
                     <input type="button" value="Home" id="home">
                     <!-- Prototype 1 Drinks button -->
-                    <input type="button" value="Drinks" id="drinks">
+                    <!-- <input type="button" value="Drinks" id="drinks"> -->
                 </form>
             </div>
-        </nav>
-        
-        <!-- To play the background music for the bar, Play/Stop Buttons on the top left -->
-        <div class="PSbuttons">
-            <button class="playButton" onclick="backgroundAudio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button>
-            <button class="pauseButton" onclick="backgroundAudio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button>
-        </div>
-
         <!-- Popup Drink Menu, Prototype 2 Drinks Button -->
         <div class="popup" onclick="drinkMenu()"><button>Drinks</button>
             <span class="popuptext" id="myPopup">
@@ -37,19 +30,56 @@
                 <button class="beer" onclick="drinkFourAudio.play()">Beer</button>
             </span>
         </div>
+        </nav>
+        
+        <!-- To play the background music for the bar, Play/Stop Buttons on the top left -->
+        <div class="PSbuttons">
+            <button class="playButton" onclick="backgroundAudio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button>
+            <button class="pauseButton" onclick="backgroundAudio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button>
+        </div>
+
+        <!-- Popup Drink Menu, Prototype 2 Drinks Button -->
+        <!-- <div class="popup" onclick="drinkMenu()"><button>Drinks</button>
+            <span class="popuptext" id="myPopup">
+                <button class="vodka" onclick="drinkOneAudio.play()">Vodka Coke</button>
+                <button class="champagne" onclick="drinkTwoAudio.play()">Champagne</button>
+                <button class="soda" onclick="drinkThreeAudio.play()">Soda</button>
+                <button class="beer" onclick="drinkFourAudio.play()">Beer</button>
+            </span>
+        </div> -->
         
         <!-- Pending Removal -->
-        <!-- Buttons for interactions -->
-        <!-- <div class="bartenderBtn"> -->
-            <!-- <button class="playButton" onclick="audio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button> -->
-            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button> -->
-        <!-- </div> -->
+        <!-- Buttons for interactions, Prototype 3 -->
+        <div class="bartenderBtn">
+            <button class="playButton" type="invisBtn" onclick="audio.play()"><img src="./images/just_a_shape.png" alt="bartender" width="40px" height="60px"></button>
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="" alt="pause" width="30px" height="30px"></button> -->
+        </div>
+    
+        <div class="vodkaCokeBtn">
+            <button class="playButton" type="invisBtn" onclick="drinkOneAudio.play()"><img src="./images/just_a_shape.png" alt="vodkacoke" width="30px" height="30px"></button>
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="" alt="pause" width="30px" height="30px"></button> -->
+        </div>
 
-        <!-- <div class="drinkBtn"> -->
-            <!-- <button class="playButton" onclick="audio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button> -->
-            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button> -->
-        <!-- </div> -->
+        <div class="champagneBtn">
+            <button class="playButton" type="invisBtn" onclick="drinkTwoAudio.play()"><img src="./images/just_a_shape.png" alt="cham" width="38px" height="65px"></button>
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="" alt="pause" width="30px" height="30px"></button> -->
+        </div>
 
-    <script src="./beachbar.js"></script>
+        <div class="sodaBtn">
+            <button class="playButton" type="invisBtn" onclick="drinkThreeAudio.play()"><img src="./images/just_a_shape.png" alt="soda" width="30px" height="30px"></button>
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="" alt="pause" width="30px" height="30px"></button> -->
+        </div>
+
+        <div class="beerBtn">
+            <button class="playButton" type="invisBtn" onclick="drinkFourAudio.play()"><img src="./images/just_a_shape.png" alt="beer" width="60px" height="40px"></button>
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="" alt="pause" width="30px" height="30px"></button> -->
+        </div>
+
+        <div class="shotBtn">
+            <button class="playButton" type="invisBtn" onclick="drinkFiveAudio.play()"><img src="./images/just_a_shape.png" alt="shot" width="55px" height="60px"></button>
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="" alt="pause" width="30px" height="30px"></button> -->
+        </div>
+
+        <script src="beachbar.js"></script>
     </body>
 </html>

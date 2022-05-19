@@ -8,7 +8,7 @@ homeButton.onclick = backHome
 
 // For PSbuttons, background audio
 const backgroundAudio = new Audio();
-audio.src = "./assets/bar_large_busy_dance_music.mp3";
+backgroundAudio.src = "./assets/bar_large_busy_dance_music.mp3";
 
 // Might be added in rotation of the background audio
 // bar_small_busy_dance_music.mp3
@@ -22,25 +22,30 @@ function drinkMenu() {
 
 // Vodka Coke
 const drinkOneAudio = new Audio();
-audio.src = "./assets/field_reports_pub_vodka_&_coke_sequence_224.mp3"
+drinkOneAudio.src = "./assets/field_reports_pub_vodka_&_coke_sequence_224.mp3"
+console.log(drinkOneAudio)
 
 // Bottle of Champagne pop and pour
 const drinkTwoAudio = new Audio();
-audio.src = "./assets/food_drink_champagne_cork_pop_pour.mp3"
+drinkTwoAudio.src = "./assets/food_drink_champagne_cork_pop_pour.mp3"
 
 // Fizzy Drink
 const drinkThreeAudio = new Audio();
-audio.src = "./assets/food_drink_champagne_pour.mp3"
+drinkThreeAudio.src = "./assets/food_drink_champagne_pour.mp3"
 
 // Beer Pour from Tap
 const drinkFourAudio = new Audio();
-audio.src = "./assets/field_reports_pub_pint_pour_218.mp3"
+drinkFourAudio.src = "./assets/field_reports_pub_pint_pour_218.mp3"
+
+// Beer Pour from Tap
+const drinkFiveAudio = new Audio();
+drinkFiveAudio.src = "./assets/533846__therealrpb__get-a-drink.mp3"
 
 // Tells the user to rotate their phone
 function setup() {
     var alerted = true;
     if (alerted) {
-        alert("Please Rotate Your Phone.");
+        // alert("Please Rotate Your Phone.");
     }
     alerted = false;
 }
