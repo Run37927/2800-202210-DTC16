@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Beach Bar</title>
+        <link rel="stylesheet" href="./css/beachbar.css">
+    </head>
+    <body>
+        <!-- Buttons on the bottom right -->
+        <!-- May replaced with a icon instead -->
+        <nav>
+            <div class="leftNav">
+
+                <form>
+                    <!-- Brings you back to the landing page -->
+                    <input type="button" value="Home" id="home">
+                    <!-- Might need a stop all button to stop all sounds -->
+                    <input type="button" value="Drinks" id="drinks">
+                </form>
+            </div>
+        </nav>
+        
+        <!-- To play the background music for the bar, Play/Stop Buttons on the top left -->
+        <div class="PSbuttons">
+            <button class="playButton" onclick="backgroundAudio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button>
+            <button class="pauseButton" onclick="backgroundAudio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button>
+        </div>
+
+        <FORM name="windowDrinkEvent">  
+            <input type="text" name="txtpath"/>  
+            <input type="button" value="Open" name="btnOpenPopup" onClick="OpenNewWindow(txtpath.value)" />  
+         </FORM>  
+        
+        <!-- Buttons for interactions -->
+        <!-- <div class="bartenderBtn"> -->
+            <!-- <button class="playButton" onclick="audio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button> -->
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button> -->
+        <!-- </div> -->
+
+        <!-- <div class="drinkBtn"> -->
+            <!-- <button class="playButton" onclick="audio.play()"><img src="./images/play_button1.png" alt="play" width="30px" height="30px"></button> -->
+            <!-- <button class="pauseButton" onclick="audio.pause()"><img src="./images/stop_button1.png" alt="pause" width="30px" height="30px"></button> -->
+        <!-- </div> -->
+
+    <script src="./beachbar.js"></script>
+    </body>
+</html>
