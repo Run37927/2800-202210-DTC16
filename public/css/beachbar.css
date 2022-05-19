@@ -147,8 +147,8 @@ form input:active {
     to {opacity:1 ;}
   }
 
-  /* As per interaction button */
-
+/* As per interaction button */
+/* Uncomment the "opacity: 0; to make the white images invisible */
 .bartenderBtn {
     background:transparent;
     outline:none;
