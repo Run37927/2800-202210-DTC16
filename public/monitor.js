@@ -186,6 +186,7 @@ function dosecret() {
 
       easter.style.backgroundColor = "red"
       easter.value = "EASTER"
+      easter.style.opacity = "1";
 }
 const easter = document.querySelector(".easter");
 easter.onclick = dosecret;
