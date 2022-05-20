@@ -1,0 +1,267 @@
+body{
+    background-color: #f5f5f5;
+    background-image: url("/public/images/Dream-Beach-Club.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+}
+
+nav{
+    float: left;
+    text-align: left;
+}
+
+/* For the Black play/stop buttons at the top left*/
+.PSbuttons {
+    position: absolute; top: 3vh; left: 12vw;
+    display: flex;
+    flex-direction: row;
+    opacity: 0.75;
+}
+
+
+.playButton {
+    transition: transform 250ms ease-in-out, opacity 250ms linear;
+    border: none;
+    background: transparent;
+}
+
+
+.pauseBackgroundButton {
+    transition: transform 250ms ease-in-out, opacity 250ms linear;
+    border: none;
+    background: transparent;
+}
+
+/* For the "Stop All" Button */
+.pauseButton {
+    transition: transform 250ms ease-in-out, opacity 250ms linear;
+    border: none;
+}
+
+
+.leftNav {
+    position: absolute;
+    left: 1;
+    height: 10vh;
+    width: 10vw;
+    background-color: transparent;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+form input {
+    margin-top: .5rem;
+    border: none;
+    align-items: center;
+    background-color: #d2d2d2;
+    border-radius: 10px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    height: 25px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* position: absolute; top: 0vh; */
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    /* will-change: box-shadow, transform; */
+    font-size: 16px;
+}
+
+form input:focus {
+    box-shadow: #d3d3d3 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+form input:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+form input:active {
+    box-shadow: #9a9a9a 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.windowDrinkEvent {
+    position: absolute; top: 20vh;
+}
+
+.drinkButton {
+    /* margin-top: .3rem; */
+    border: none;
+    align-items: center;
+    background-color: #d2d2d2;
+    border-radius: 10px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    height: 25px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* position: absolute; top: 0vh; */
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    /* will-change: box-shadow, transform; */
+    font-size: 16px;
+}
+
+  /* Popup Menu */
+/* Popup container */
+.popup {
+    position: absolute; top: 22vh;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1vh 1vw 1vh 1vw;
+    position: absolute;
+    z-index: 1;
+    bottom: -400%;
+    /* left: 50%; */
+    /* margin-left: -80px; */
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+/* As per interaction button */
+/* Uncomment/comment the "opacity: 0; to make the white images invisible */
+.beachBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 0vw; top: 34vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.bartenderBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 91vw; top: 34vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.vodkaCokeBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 68.5vw; top: 31vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.champagneBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 81.5vw; top: 66vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.sodaBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 71vw; top: 77vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
+.beerBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 55vw; top: 28vh;
+    cursor:pointer;
+    border: none !important;
+    font-size:0;
+}
+
+.shotBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 39vw; top: 66vh;
+    cursor:pointer;
+    border: none !important;
+    font-size:0;
+}
+
+/* .bartenderBtn {
+    position: absolute; left: 90px; top: 100px;
+
+}
+
+.drinkBtn {
+    position: absolute; left: 50px; top: 200px;
+} */
