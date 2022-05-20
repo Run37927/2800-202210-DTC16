@@ -115,4 +115,11 @@ $(document).ready(function () {
     $("#new-quote").click(function () {
         getQuote();
     });
+    $(".menu").html(`<ul>
+    <li><a href="/welcome/${window.location.href.split('/')[4]}">Home</a></li>
+    <br>
+    <li><a href="/monitor/${window.location.href.split('/')[4]}">Flight Monitor</a></li>
+    <br>
+    <li><a href="/beachbar/${window.location.href.split('/')[4]}">Beach Bar</a></li>
+</ul>`)
 });

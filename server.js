@@ -134,6 +134,16 @@ app.get("/welcome/:id", function(req, res){
     res.sendFile(__dirname+"/public/welcomeback.html", __dirname + "/public/images")
 })
 
+app.get("/beachbar/:id", function(req, res){
+  console.log("beachbar page sent to " + req.params.id)
+  res.sendFile(__dirname+"/public/beachbar.html", __dirname + "/public/images")
+})
+
+app.get("/camp/:id", function(req, res){
+  console.log("camp page sent to " + req.params.id)
+  res.sendFile(__dirname+"/public/camp.html", __dirname + "/public/images")
+})
+
 app.get("/monitor/:id", function(req, res){
   console.log("monitor page sent to " + req.params.id)
   res.sendFile(__dirname+"/public/monitor.html", __dirname + "/public/images")
