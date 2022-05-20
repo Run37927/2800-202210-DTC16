@@ -11,11 +11,12 @@ nav{
     text-align: left;
 }
 
+/* For the Black play/stop buttons at the top left*/
 .PSbuttons {
     position: absolute; top: 3vh; left: 12vw;
     display: flex;
     flex-direction: row;
-
+    opacity: 0.75;
 }
 
 
@@ -24,22 +25,18 @@ nav{
     border: none;
     background: transparent;
 }
-.pauseButton {
+
+
+.pauseBackgroundButton {
     transition: transform 250ms ease-in-out, opacity 250ms linear;
     border: none;
     background: transparent;
 }
 
-.playBtn:hover,
-.playBtn:focus {
-    transform: scale(1.0);
-    opacity: .75;
-}
-
-.pauseBtn:hover,
-.pauseBtn:focus {
-    transform: scale(1.0);
-    opacity: .75;
+/* For the "Stop All" Button */
+.pauseButton {
+    transition: transform 250ms ease-in-out, opacity 250ms linear;
+    border: none;
 }
 
 
@@ -60,9 +57,8 @@ form input {
     margin-top: .5rem;
     border: none;
     align-items: center;
-    appearance: none;
-    background-color: #9a9a9a;
-    border-radius: 2px;
+    background-color: #d2d2d2;
+    border-radius: 10px;
     border-width: 0;
     box-sizing: border-box;
     color: #36395A;
@@ -83,7 +79,7 @@ form input {
     -webkit-user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
-    will-change: box-shadow, transform;
+    /* will-change: box-shadow, transform; */
     font-size: 16px;
 }
 
@@ -103,6 +99,36 @@ form input:active {
 
 .windowDrinkEvent {
     position: absolute; top: 20vh;
+}
+
+.drinkButton {
+    /* margin-top: .3rem; */
+    border: none;
+    align-items: center;
+    background-color: #d2d2d2;
+    border-radius: 10px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    height: 25px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* position: absolute; top: 0vh; */
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    /* will-change: box-shadow, transform; */
+    font-size: 16px;
 }
 
   /* Popup Menu */
@@ -148,7 +174,19 @@ form input:active {
   }
 
 /* As per interaction button */
-/* Uncomment the "opacity: 0; to make the white images invisible */
+/* Uncomment/comment the "opacity: 0; to make the white images invisible */
+.beachBtn {
+    background:transparent;
+    outline:none;
+    display:block;
+    opacity: 0;
+    position: absolute; left: 0vw; top: 34vh;
+    cursor:pointer;
+    border: black !important;
+    font-size:0;
+}
+
+
 .bartenderBtn {
     background:transparent;
     outline:none;
