@@ -52,7 +52,7 @@ drinkFiveAudio.src = "./assets/533846__therealrpb__get-a-drink.mp3"
 function setup() {
     var alerted = true;
     if (alerted) {
-        // alert("Please Rotate Your Phone.");
+        alert("Please Rotate Your Phone.");
     }
     alerted = false;
 }
