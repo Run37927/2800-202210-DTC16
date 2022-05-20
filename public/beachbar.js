@@ -6,9 +6,25 @@ function backHome() {
 const homeButton = document.getElementById("home");
 homeButton.onclick = backHome
 
-// Might be added in rotation of the background audio
-// bar_small_busy_dance_music.mp3
-// bar_small_busy_r&b_music.mp3
+
+function closeMenu() {
+    document.getElementById("drinkMenu").style.width = "0";
+}
+
+function openDrinksMenu() {
+    document.getElementById("drinkMenu").style.width = "500px";
+}
+
+const menuBtn = document.getElementById("menu");
+menuBtn.onclick = openDrinksMenu;
+
+
+// function openRecipe() {
+//     document.getElementById("vodka").style.width = "500px";
+// }
+// const recipeBtn = document.getElementById("recipe");
+// recipeBtn.onclick = openRecipe;
+
 
 // Popup Drink Button Menu
 function drinkMenu() {

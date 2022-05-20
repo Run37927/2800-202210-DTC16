@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Beach Bar</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/beachbar.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
@@ -18,7 +19,15 @@
                 </form>
             </div>
 
-            
+            <div id="drinkMenu">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+                <button class="recipe" style="width:120px; height: 20px; border: 2px solid red;   position: absolute;
+                top: 32vh; left: 12vw; opacity: 0;"></button>
+            </div>
+
+            <div id="vodka">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+            </div>
             <!-- <div class="popup" onclick="drinkMenu()">
                 <button class="drinkButton">Drinks</button>
                 <span class="popuptext" id="myPopup">
