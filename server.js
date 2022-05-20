@@ -1,0 +1,150 @@
+const express = require("express");
+const app = express();
+app.engine('html', require('ejs').renderFile);
+app.listen(process.env.PORT || 6050, function (err) {
+  if (err) console.log(err);
+});
+
+const bodyparser = require("body-parser");
+app.use(
+  bodyparser.urlencoded({
+    extended: true
+  })
+);
+
+app.use(express.static(__dirname + "/public"));
+
+
+const mongoose = require("mongoose");
+const MongoClient = require("mongodb").MongoClient;
+const e = require("express");
+const { query } = require("express");
+const { Admin } = require("mongodb");
+const dbUrl =
+  "mongodb+srv://elee323:12341234@cluster0.8b8go.mongodb.net/2800-202210-DTC16?retryWrites=true&w=majority";
+
+// mongoose.connect(
+//     dbUrl,
+//     { useNewUrlParser: true, useUnifiedTopology: true }
+//     );
+// const userSchema = new mongoose.Schema({
+//     name: String,
+//     email: String,
+//     pwd: String,
+// });
+// const userInfoModel = mongoose.model("userInfo", userSchema);
+
+app.get("/");
+
+
+// User Sign up
+app.post("/signuprequest", function (req, res) {
+  console.log("user regiestration requested", req.body);
+  userName = req.body.name;
+  userEmail = req.body.email;
+  userPassword = req.body.password;
+  MongoClient.connect(dbUrl, function (err, db) {
+    if (err) console.log(err);
+    var dbo = db.db("2800-202210-DTC16");
+    var userInfoObj = {
+      userName: `${userName}`,
+      userEmail: `${userEmail}`,
+      userPassword: `${userPassword}`,
+      userIsAdmin: false
+    };
+    dbo.collection("userInfos").insertOne(userInfoObj, function (err, res) {
+      if (err) console.log(err);
+      console.log("1 document inserted");
+      db.close();
+    });
+  });
+});
+
+// User Sign Up
+app.get('/signup', function(req, res){
+  res.sendFile(__dirname + "/public/register.html")
+})
+
+
+// User Login
+app.get('/login', function(req, res){
+  res.sendFile(__dirname + "/public/login.html")
+})
+
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+.then((ans) => {
+    console.log("DB Connected Successfully")
+  }).catch((err) => {
+    console.log("Error in the Connection")
+  })
+const userLoginSchema = new mongoose.Schema({
+  userEmail: String,
+  userPassword: String,
+  userIsAdmin: Boolean
+});
+const userLoginModel = mongoose.model("model", userLoginSchema, "userInfos");
+
+app.post("/requestlogin", function (req, res) {
+  console.log("user login requested", req.body);
+  email = req.body.email;
+  password = req.body.password;
+  userLoginModel.find(
+    { $and: [{ userEmail: email }, { userPassword: password }] },
+    // { userEmail: email },
+    function (err, userInfo) {
+      if (err) console.log(err);
+    //   console.log(userInfo[0].userIsAdmin)
+    if (userInfo.length != 0){
+      res.send({userId: userInfo[0]._id, userIsAdmin: userInfo[0]._doc.userIsAdmin})
+      if (userInfo[0]._doc.userIsAdmin) {
+          console.log(userInfo[0]._id + " has logged in as an admin");
+        } else {
+        console.log(userInfo[0]._id + " has logged in as a norm user");
+      }
+    }else{
+        console.log("user info doesn't exist ")
+    }
+    }
+  )
+});
+
+// TODO: check if the user is admin with DB
+// Admin webpage
+app.get("/admin/:id", function(req, res){
+    console.log("admin page sent to " + req.params.id)
+    res.sendFile(__dirname+"/public/admin.html")
+})
+
+app.get("/fetchuserdata", function(req, res) {
+  
+  userLoginModel.find({ "userIsAdmin" : false}, function(err, userInfo) {
+    if (err) {
+      console.log("Error " + err);
+    } else {
+      console.log("Data " + JSON.stringify(userInfo));
+    }
+    res.send(userInfo);
+  })
+})
+
+// TODO: check if the user is user with DB
+// User webpage
+app.get("/welcome/:id", function(req, res){
+    console.log("beach page sent to " + req.params.id)
+    res.sendFile(__dirname+"/public/welcomeback.html", __dirname + "/public/images")
+})
+
+app.get("/beachbar/:id", function(req, res){
+  console.log("beachbar page sent to " + req.params.id)
+  res.sendFile(__dirname+"/public/beachbar.html", __dirname + "/public/images")
+})
+
+app.get("/camp/:id", function(req, res){
+  console.log("camp page sent to " + req.params.id)
+  res.sendFile(__dirname+"/public/camp.html", __dirname + "/public/images")
+})
+
+app.get("/monitor/:id", function(req, res){
+  console.log("monitor page sent to " + req.params.id)
+  res.sendFile(__dirname+"/public/monitor.html", __dirname + "/public/images")
+})

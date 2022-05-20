@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Beach Bar</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/beachbar.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- Top Left Home/Stop All Buttons -->
+            <div class="leftNav">
+                <form>
+                    <!-- Brings you back to the landing page -->
+                    <input type="button" value="Home" id="home">
+                    <input type="button" value="Menu" id="menu">
+                </form>
+            </div>
+
+            <div id="drinkMenu">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+                <button class="recipe" style="width:120px; height: 20px; border: 2px solid red;   position: absolute;
+                top: 32vh; left: 12vw; opacity: 0;"></button>
+            </div>
+
+            <div id="vodka">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+            </div>
+            <!-- <div class="popup" onclick="drinkMenu()">
+                <button class="drinkButton">Drinks</button>
+                <span class="popuptext" id="myPopup">
+                    <button class="vodka" onclick="drinkOneAudio.play()">Vodka Coke</button>
+                    <button class="champagne" onclick="drinkTwoAudio.play()">Champagne</button>
+                    <button class="soda" onclick="drinkThreeAudio.play()">Soda</button>
+                    <button class="beer" onclick="drinkFourAudio.play()">Beer</button>
+                </span>
+            </div> -->
+        <!-- To play the background music for the bar, Play/Stop Buttons on the top left -->
+        <div class="PSbuttons">
+            <button class="playButton" onclick="backgroundAudio.play()">
+                <img src="/images/play.png" alt="play" width="75px" height="75px">
+            </button>
+            <button class="pauseBackgroundButton" onclick="backgroundAudio.pause(), beachAudio.pause(),bartenderAudio.pause(), drinkOneAudio.pause(), drinkTwoAudio.pause(), drinkThreeAudio.pause(), drinkFourAudio.pause(), drinkFiveAudio.pause()">
+                <img src="/images/pause.png" alt="play" width="75px" height="75px">
+            </button>
+        </div>
+
+
+        <!-- buttons on various objects -->
+        <div class="beachBtn">
+            <button class="playButton" onclick="beachAudio.play()">
+                <img src="/images/just_a_shape.png" alt="">
+            </button>
+
+        </div>
+
+        <div class="bartenderBtn">
+            <button class="playButton" onclick="bartenderAudio.play()">
+                <img src="/images/just_a_shape.png" alt=""></button>
+
+        </div>
+
+        <div class="vodkaCokeBtn">
+            <button class="playButton" onclick="drinkOneAudio.play()">
+                <img src="/images/just_a_shape.png" alt=""></button>
+
+        </div>
+
+        <div class="champagneBtn">
+            <button class="playButton" onclick="drinkTwoAudio.play()">
+                <img src="/images/just_a_shape.png" alt=""></button>
+
+        </div>
+
+        <div class="sodaBtn">
+            <button class="playButton" onclick="drinkThreeAudio.play()">
+                <img src="/images/just_a_shape.png" alt=""></button>
+
+        </div>
+
+        <div class="beerBtn">
+            <button class="playButton" onclick="drinkFourAudio.play()">
+                <img src="/images/just_a_shape.png" alt=""></button>
+
+        </div>
+
+        <div class="shotBtn">
+            <button class="playButton" onclick="drinkFiveAudio.play()">
+                <img src="/images/just_a_shape.png" alt=""></button>
+
+        </div>
+
+        <script src="/beachbar.js"></script>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome To IMissMyVacay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/landing.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container spacing">
+        <h1 class="primary-title">Welcome to I Miss My Vacay</h1>
+        <p>
+          Experience your favourite leisure activities without leaving your
+          house.
+        </p>
+        <a href="/login" class="btn">Log out</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="featured">
+        <div class="container">
+          <h2 class="section-title">Featured Experiences</h2>
+
+          <div class="split">
+            <a href="#" class="featured__item">
+              <img src="/images/plane.png" alt="" class="featured__img" />
+              <p class="featured__details">
+                <span class="price">Air Travel</span>
+              </p>
+            </a>
+            <a href="#" class="featured__item">
+              <img
+                src="/images/palmtree.png"
+                alt=""
+                class="featured__img"
+                height="250px"
+              />
+              <p class="featured__details">
+                <span class="price">Tropical Beach</span>
+              </p>
+            </a>
+            <a href="#" class="featured__item">
+              <img src="/images/camping.png" alt="" class="featured__img" />
+              <p class="featured__details">
+                <span class="price">Outdoor Camping</span>
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-products">
+        <div class="container" id="feature-container"></div>
+      </section>
+    </main>
+    <script>
+      console.log(window.location.href.split("/"));
+      airBox = document.getElementById("feature-container");
+      airBox.innerHTML = `
+            <h2 class="section-title">Our products</h2>
+
+<article id="air-travel-box" class="product air-travel spacing">
+    <img src="/images/airTravvel.png" alt="" class="product__image">
+    <h3 class="product__title">Virtual Air Travel</h3>
+    <p class="product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <a href='/monitor/${
+      window.location.href.split("/")[4]
+    }'   class="btn">TRY NOW</a>
+
+</article>
+
+<article class="product outdoor spacing">
+    <img src="/images/fishing.png" alt="" class="product__image">
+    <h3 class="product__title">Virtual Outdoor</h3>
+    <p class="product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <a href="/camp/${
+      window.location.href.split("/")[4]
+    }" class="btn">TRY NOW</a>
+</article>
+
+<article class="product beach spacing">
+    <img src="/images/tropicalBeach.png" alt="" class="product__image">
+    <h3 class="product__title">Virtual Beach Hangout</h3>
+    <p class="product__description">Lorem ipsum dolor sit amet consectetRY NOWng elit.</p>
+    <a href="/beachbar/${
+      window.location.href.split("/")[4]
+    }" class="btn">Try now</a>
+</article>
+                        `;
+    </script>
+  </body>
+</html>
