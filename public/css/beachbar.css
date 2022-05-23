@@ -13,6 +13,20 @@ body{
 }
 
 
+.soundtracks {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    top: 50vh;
+}
+
+.soundtracks .audio-info {
+    color: #36395A;
+    text-align: center;
+    text-shadow: 1px 1px 2px #FCFCFD, 0 0 1em #36395A, 0 0 0.2em #36395A;
+}
+
 /* For the Black play/stop buttons at the top right*/
 .PSbuttons {
     position: absolute; 
