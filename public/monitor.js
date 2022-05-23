@@ -197,13 +197,6 @@ function displayLocation(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    // var div = document.getElementById("location");
-    // div.innerHTML = "You are at latitude: " + latitude + ", longitude: " + longitude;
-
-    // var km = computeDistance(position.coords, FIJI);
-    // var distance = document.getElementById("distance");
-    // distance.innerHTML = "you are " + km + " km from paradise."
-
     if (map == null) {
         showMap(position.coords);
     } else {
