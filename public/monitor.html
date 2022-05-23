@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Monitor</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
@@ -34,35 +35,16 @@
 
             .buttons {
                 position: absolute;
-                z-index: 10;
                 display: flex;
                 flex-direction: column;
-
-            }
-            .playBtn {
-                transition: transform 250ms ease-in-out, opacity 250ms linear;
-                border: none;
-                background: transparent;
-            }
-            .pauseBtn {
-                transition: transform 250ms ease-in-out, opacity 250ms linear;
-                border: none;
-                background: transparent;
+                min-height: 100vh;
             }
 
-            .playBtn:hover,
-            .playBtn:focus {
-                transform: scale(1.1);
-                opacity: .8;
+            .buttons .audio-info {
+                color: #36395A;
+                text-align: center;
+                text-shadow: 1px 1px 2px #FCFCFD, 0 0 1em #36395A, 0 0 0.2em #36395A;
             }
-
-            .pauseBtn:hover,
-            .pauseBtn:focus {
-                transform: scale(1.1);
-                opacity: .8;
-            }
-
-
             .nav-bar {
                 position: absolute;
                 right: 0;
@@ -139,12 +121,20 @@
     <body>
         <div id="location"></div>
 
-        <div id="distance"></div>
         <div class="buttons">
-            <button class="playBtn" onclick="audio.play()"><img src="/images/play.png" alt="play" width="75px" height="75px"></button>
-            <button class="pauseBtn" onclick="audio.pause()"><img src="/images/pause.png" alt="pause" width="75px" height="75px"></button>
+            <span class="audio-info">Flight annoucement</span>
+            <audio controls style="width: 20vw; height: 8vh;">
+                <source src="/audios/airplaneAnnoucement.mp3" type="audio/ogg">
+            </audio>
+            <span class="audio-info">Funny flight attendant</span>
+            <audio controls style="width: 20vw; height: 8vh;">
+                <source src="/audios/funnyattendant.mp3" type="audio/mpeg">
+            </audio>
+            <span class="audio-info">Spaceship ambience</span>
+            <audio controls style="width: 20vw; height: 8vh;">
+                <source src="/audios/starship.mp3" type="audio/mpeg">
+            </audio>
         </div>
-
 
         <div class="nav-bar">
             <form>

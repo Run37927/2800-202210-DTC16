@@ -220,24 +220,6 @@ function displayError(error) {
     div.innerHTML = errorMsg;
 }
 
-function computeDistance(startCoords, destCoords) {
-    var startLatRads = degreesToRadians(startCoords.latitude);
-    var startLongRads = degreesToRadians(startCoords.longitude);
-    var destLatRads = degreesToRadians(destCoords.latitude);
-    var destLongRads = degreesToRadians(destCoords.longitude);
-
-    var Radius = 6371; // radius of the Earth in km
-    var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) +
-        Math.cos(startLatRads) * Math.cos(destLatRads) *
-        Math.cos(startLongRads - destLongRads)) * Radius;
-    return distance;
-}
-
-function degreesToRadians(degrees) {
-    var radians = (degrees * Math.PI) / 180;
-    return radians;
-}
-
 
 const audio = new Audio();
 audio.src = "../audios/airplaneAnnoucement.mp3";
@@ -249,7 +231,6 @@ function setup() {
         alert("please rotate your phone right now");
     }
     alerted = false;
-    // location.href = "/monitor/:id"
 }
 
 $(document).ready(setup);
