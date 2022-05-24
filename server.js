@@ -1,9 +1,16 @@
 const express = require("express");
 const app = express();
+const session = require('express-session');
+const MongoDBSession = require('connect-mongodb-session')(session);
 app.engine('html', require('ejs').renderFile);
 app.listen(process.env.PORT || 6050, function (err) {
   if (err) console.log(err);
 });
+
+// const store = new MongoDBSession({
+//   url: "mongodb+srv://elee323:12341234@cluster0.8b8go.mongodb.net/2800-202210-DTC16?retryWrites=true&w=majority",
+//   collection: "userInfos"
+// })
 
 const bodyparser = require("body-parser");
 app.use(
@@ -12,14 +19,25 @@ app.use(
   })
 );
 
+app.use(session({
+  secret: 'sshh', 
+  saveUninitialized: false, 
+  resave: false,
+  // store: store
+}));
+
 app.use(express.static(__dirname + "/public"));
 
+const isAuth = (req,res,next) => {
+  if (req.session.isAuth) {
+      next()
+  } else {
+      res.redirect('/login')
+  }
+}
 
 const mongoose = require("mongoose");
 const MongoClient = require("mongodb").MongoClient;
-const e = require("express");
-const { query } = require("express");
-const { Admin } = require("mongodb");
 const dbUrl =
   "mongodb+srv://elee323:12341234@cluster0.8b8go.mongodb.net/2800-202210-DTC16?retryWrites=true&w=majority";
 
@@ -95,6 +113,7 @@ app.post("/requestlogin", function (req, res) {
       if (err) console.log(err);
     //   console.log(userInfo[0].userIsAdmin)
     if (userInfo.length != 0){
+      req.session.isAuth = true;
       res.send({userId: userInfo[0]._id, userIsAdmin: userInfo[0]._doc.userIsAdmin})
       if (userInfo[0]._doc.userIsAdmin) {
           console.log(userInfo[0]._id + " has logged in as an admin");
@@ -108,9 +127,17 @@ app.post("/requestlogin", function (req, res) {
   )
 });
 
+// logout
+app.get('/logout', (req,res) => {
+  req.session.destroy((err) => {
+      if (err) throw err;
+      res.redirect("/")
+  })
+})
+
 // TODO: check if the user is admin with DB
 // Admin webpage
-app.get("/admin/:id", function(req, res){
+app.get("/admin/:id", isAuth, function(req, res){
     console.log("admin page sent to " + req.params.id)
     res.sendFile(__dirname+"/public/admin.html")
 })
@@ -129,22 +156,23 @@ app.get("/fetchuserdata", function(req, res) {
 
 // TODO: check if the user is user with DB
 // User webpage
-app.get("/welcome/:id", function(req, res){
+app.get("/welcome/:id", isAuth, function(req, res){
     console.log("beach page sent to " + req.params.id)
     res.sendFile(__dirname+"/public/welcomeback.html", __dirname + "/public/images")
 })
 
-app.get("/beachbar/:id", function(req, res){
+app.get("/beachbar/:id", isAuth, function(req, res){
   console.log("beachbar page sent to " + req.params.id)
   res.sendFile(__dirname+"/public/beachbar.html", __dirname + "/public/images")
 })
 
-app.get("/camp/:id", function(req, res){
+app.get("/camp/:id", isAuth, function(req, res){
   console.log("camp page sent to " + req.params.id)
   res.sendFile(__dirname+"/public/camp.html", __dirname + "/public/images")
 })
 
-app.get("/monitor/:id", function(req, res){
+app.get("/monitor/:id", isAuth, function(req, res){
   console.log("monitor page sent to " + req.params.id)
   res.sendFile(__dirname+"/public/monitor.html", __dirname + "/public/images")
 })
+
