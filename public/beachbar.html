@@ -26,18 +26,20 @@
             </div>
 
             <div class="soundtracks">
-                <span class="audio-info">sound track 1</span>
-                <audio controls style="width: 20vw; height: 8vh;">
-                    <source src="" type="audio/ogg">
-                </audio>
-                <span class="audio-info">sound track 2</span>
-                <audio controls style="width: 20vw; height: 8vh;">
-                    <source src="" type="audio/mpeg">
-                </audio>
-                <span class="audio-info">sound track 3</span>
-                <audio controls style="width: 20vw; height: 8vh;">
-                    <source src="" type="audio/mpeg">
-                </audio>
+                <!-- Busy Bar Environment -->
+                <span class="audio-info">Busy Bar</span>
+                <audio controls style="width: 20vw; height: 8vh;" volume="0.1" src="./assets/bar_large_busy_dance_music.mp3"
+                loop></audio>
+                <!-- Beach Environment with kids -->
+                <span class="audio-info">Beach</span>
+                <audio controls style="width: 20vw; height: 8vh;" volume="0.1" src="./assets/191444__john-sipos__beach-goers-and-surf.mp3"
+                loop></audio>
+                <!-- Samba Music -->
+                <span class="audio-info">Samba Drums</span>
+                <audio controls style="width: 20vw; height: 8vh;" volume="0.1" src="./assets/music_david_gwyn_jones_i_wanna_be_near_trees_instrumental.mp3"
+                loop></audio>
+                <!-- Volume Control -->
+                <li><input id="volume" type="range"></input></li>
             </div>
 
             <div id="vodka">
@@ -54,9 +56,9 @@
             </div> -->
         <!-- To play the background music for the bar, Play/Stop Buttons on the top left -->
         <div class="PSbuttons">
-            <button class="playButton" onclick="backgroundAudio.play()">
+            <!-- <button class="playButton" onclick="backgroundAudio.play()">
                 <img src="/images/play.png" alt="play" width="75px" height="75px">
-            </button>
+            </button> -->
             <button class="pauseBackgroundButton" onclick="backgroundAudio.pause(), beachAudio.pause(),bartenderAudio.pause(), drinkOneAudio.pause(), drinkTwoAudio.pause(), drinkThreeAudio.pause(), drinkFourAudio.pause(), drinkFiveAudio.pause()">
                 <img src="/images/pause.png" alt="play" width="75px" height="75px">
             </button>
@@ -64,12 +66,12 @@
 
 
         <!-- buttons on various objects -->
-        <div class="beachBtn">
+        <!-- <div class="beachBtn">
             <button class="playButton" onclick="beachAudio.play()">
-                <img src="/images/just_a_shape.png" alt="">
+                <img src="/images/just_a_shape.png" alt="" width="60px" height="40px">
             </button>
 
-        </div>
+        </div> -->
 
         <div class="bartenderBtn">
             <button class="playButton" onclick="bartenderAudio.play()">
@@ -103,6 +105,12 @@
 
         <div class="shotBtn">
             <button class="playButton" onclick="drinkFiveAudio.play()">
+                <img src="/images/just_a_shape.png" alt=""></button>
+
+        </div>
+
+        <div class="OTHERBtn">
+            <button class="playButton" onclick="OTHERAudio.play()">
                 <img src="/images/just_a_shape.png" alt=""></button>
 
         </div>

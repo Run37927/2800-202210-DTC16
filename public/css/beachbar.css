@@ -176,8 +176,8 @@ form input:active {
 /* As per interaction button */
 /* Uncomment/comment the "opacity: 0; to make the white images invisible */
 .beachBtn {
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 40px; */
     display:block;
     position: absolute; left: 0vw; top: 34vh;
     cursor:pointer;
