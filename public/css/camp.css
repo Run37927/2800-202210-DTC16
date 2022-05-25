@@ -138,7 +138,6 @@ header .logo {
 .text a:hover {
     letter-spacing: 6px;
 }
-
 .social {
     position: absolute;
     z-index: 10;
@@ -303,7 +302,7 @@ body {
     }
 
     .text audio {
-        padding-left: 100px;
+        /* padding-left: 100px; */
         zoom: 150%;
     }
 
