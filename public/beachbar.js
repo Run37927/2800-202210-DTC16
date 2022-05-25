@@ -38,8 +38,8 @@ backgroundAudio.src = "../audios/bar_large_busy_dance_music.mp3";
 
 // Current missing this file, needs to be smaller
 // For wavesBtn, background beach audio
-// const wavesAudio = new Audio();
-// wavesAudio.src = "../audios/468452__felix-blume__waves-and-seagulls-on-the-beach-close-to-lisbon.wav";
+const wavesAudio = new Audio();
+wavesAudio.src = "../audios/beach_waves_seagull.mp3";
 
 // For sambaBtn, Samba Drums audio option on the left
 const sambaAudio = new Audio();

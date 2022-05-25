@@ -23,9 +23,9 @@ body{
 }
 
 .soundtracks .audio-info {
-    color: #36395A;
+    color: #1f2246;
     text-align: center;
-    text-shadow: 1px 1px 2px #FCFCFD, 0 0 1em #36395A, 0 0 0.2em #36395A;
+    text-shadow: 1px 1px 2px #FCFCFD, 0 0 1em #212550, 0 0 0.2em #36395A;
 }
 
 /* For the Black play/stop buttons at the top right*/
@@ -239,7 +239,7 @@ form input:active {
     /* width: 60px;
     height: 60px; */
     display:block;
-    position: absolute; left: 40vw; top: 58vh;
+    position: absolute; left: 35vw; top: 58vh;
     opacity: 0;
     cursor:pointer;
 }
