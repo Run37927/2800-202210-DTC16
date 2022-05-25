@@ -302,8 +302,9 @@ body {
     }
 
     .text audio {
-        /* padding-left: 100px; */
-        zoom: 150%;
+       width: 65vw;
+       margin-top: 20px;
+       margin-bottom: 20px;
     }
 
     .toggle {
