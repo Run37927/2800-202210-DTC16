@@ -8,13 +8,14 @@ body{
     background-image: url("/images/Dream-Beach-Club.jpeg");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    /* background-size: 100%; */
     font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
     position: relative;
 }
 
 
 .soundtracks {
-    position: absolute;
+    position: absolute; left: 1vw;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -175,7 +176,7 @@ form input:active {
 
 /* As per interaction button */
 /* Uncomment/comment the "opacity: 0; to make the white images invisible */
-.beachBtn {
+.wavesBtn {
     /* width: 60px;
     height: 40px; */
     display:block;
@@ -186,18 +187,18 @@ form input:active {
 
 
 .bartenderBtn {
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
     display:block;
-    position: absolute; left: 91vw; top: 34vh;
+    position: absolute; left: 91vw; top: 30vh;
     opacity: 0;
     cursor:pointer;
 }
 
 
 .vodkaCokeBtn {
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
     display:block;
     position: absolute; left: 68.5vw; top: 31vh;
     opacity: 0;
@@ -206,18 +207,18 @@ form input:active {
 
 
 .champagneBtn {
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
     display:block;
-    position: absolute; left: 81.5vw; top: 66vh;
+    position: absolute; left: 81.5vw; top: 64vh;
     opacity: 0;
     cursor:pointer;
 }
 
 
 .sodaBtn {
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
     display:block;
     position: absolute; left: 71vw; top: 77vh;
     opacity: 0;
@@ -226,8 +227,8 @@ form input:active {
 
 
 .beerBtn {
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
     display:block;
     position: absolute; left: 55vw; top: 28vh;
     opacity: 0;
@@ -235,14 +236,40 @@ form input:active {
 }
 
 .shotBtn {
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
     display:block;
-    position: absolute; left: 39vw; top: 66vh;
+    position: absolute; left: 40vw; top: 58vh;
     opacity: 0;
     cursor:pointer;
 }
 
+.blueDrinkBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 52vw; top: 52vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.redDrinkBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 56vw; top: 70.5vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.wineBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 63vw; top: 60vh;
+    opacity: 0;
+    cursor:pointer;
+}
 
 /* drinks menu */
 div#drinkMenu,
