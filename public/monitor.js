@@ -1,4 +1,4 @@
-const url = "http://localhost:6050"
+import {url} from "./data.js" 
 window.onload = getMyLocation;
 const blueCoords = [
     { lat: 25.774, lng: -60.19 },

@@ -1,4 +1,4 @@
-const url = "http://localhost:6050"
+import {url} from "./data.js" 
 
 // Home button to bring user back home
 function backHome() {

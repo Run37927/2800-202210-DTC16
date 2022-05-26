@@ -1,4 +1,5 @@
- url = "https://imissmyvacay.herokuapp.com"
+//  const url = import "./data"
+ import {url} from "./data.js" 
  
  async function registerUser(){
     console.log("registerUser() executed")
