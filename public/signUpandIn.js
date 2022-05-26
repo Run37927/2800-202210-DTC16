@@ -1,4 +1,4 @@
- url = "http://localhost:6050"
+ url = "https://imissmyvacay.herokuapp.com"
  
  async function registerUser(){
     console.log("registerUser() executed")
