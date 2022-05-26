@@ -67,7 +67,7 @@ body{
     position: absolute;
     
     height: 10vh;
-    width: 10vw;
+    width: 15vw;
     background-color: transparent;
 }
 
@@ -79,7 +79,7 @@ form {
 
 form input {
     margin-top: 0.5rem;
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
     border: none;
     align-items: center;
     appearance: none;
