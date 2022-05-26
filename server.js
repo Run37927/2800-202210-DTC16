@@ -7,11 +7,6 @@ app.listen(process.env.PORT || 6050, function (err) {
   if (err) console.log(err);
 });
 
-// const store = new MongoDBSession({
-//   url: "mongodb+srv://elee323:12341234@cluster0.8b8go.mongodb.net/2800-202210-DTC16?retryWrites=true&w=majority",
-//   collection: "userInfos"
-// })
-
 const bodyparser = require("body-parser");
 app.use(
   bodyparser.urlencoded({
@@ -52,17 +47,6 @@ mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
   }).catch((err) => {
     console.log("Error in the Connection")
   })
-
-// mongoose.connect(
-//     dbUrl,
-//     { useNewUrlParser: true, useUnifiedTopology: true }
-//     );
-// const userSchema = new mongoose.Schema({
-//     name: String,
-//     email: String,
-//     pwd: String,
-// });
-// const userInfoModel = mongoose.model("userInfo", userSchema);
 
 app.get("/");
 
@@ -119,11 +103,6 @@ const userLoginSchema = new mongoose.Schema({
   userEmail: String,
   userPassword: String,
   userIsAdmin: Boolean,
-  // soundPreferences: [
-  //   { fire: Number, forest: Number, river: Number, wind: Number },
-  //   { bar: Number, beach: Number, samba: Number },
-  //   { announcement: Number, attendant: Number, ambience: Number }
-  // ]
   soundPreferences: mongoose.Schema.Types.Mixed
 });
 
@@ -163,8 +142,20 @@ app.get('/logout', (req,res) => {
 // TODO: check if the user is admin with DB
 // Admin webpage
 app.get("/admin/:id", isAuth, function(req, res){
-    console.log("admin page sent to " + req.params.id)
-    res.sendFile(__dirname+"/public/admin.html")
+  console.log(req.params.id)
+    userModel.find(
+      { $and: [{_id: req.params.id}, { userIsAdmin: true }] }, 
+      // {_id: req.query.id}, 
+      (err , userInfo) => {
+      if(err) console.log(err)
+      if(!userInfo){
+        res.redirect('/')
+      }else if (userInfo[0]?.userIsAdmin){
+        console.log("admin page sent to " + req.params.id)
+        res.sendFile(__dirname+"/public/admin.html")
+      }
+    })
+    
 })
 
 app.get("/fetchuserdata", function(req, res) {
