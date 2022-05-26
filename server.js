@@ -89,26 +89,26 @@ app.post("/signuprequest", function (req, res) {
     if (userInfo.length != 0){
       res.send({registered: false})
     }else{
-      // MongoClient.connect(dbUrl, function (err, db) {
-      //   if (err) console.log(err);
-      //   var dbo = db.db("2800-202210-DTC16");
-      //   var userInfoObj = {
-      //     userName: `${userName}`,
-      //     userEmail: `${userEmail}`,
-      //     userPassword: `${userPassword}`,
-      //     userIsAdmin: false,
-      //     soundPreferences: [
-      //       { fire: 0.5, forest: 0.5, river: 0.5, wind: 0.5 },
-      //       { bar: 0.5, beach: 0.5, samba: 0.5 },
-      //       { announcement: 0.5, attendant: 0.5, ambience: 0.5 }
-      //     ]
-      //   };
-      //   dbo.collection("userInfos").insertOne(userInfoObj, function (err, res) {
-      //     if (err) console.log(err);
-      //     console.log("1 document inserted");
-      //     db.close();
-      //   });
-      // });
+      MongoClient.connect(dbUrl, function (err, db) {
+        if (err) console.log(err);
+        var dbo = db.db("2800-202210-DTC16");
+        var userInfoObj = {
+          userName: `${userName}`,
+          userEmail: `${userEmail}`,
+          userPassword: `${userPassword}`,
+          userIsAdmin: false,
+          soundPreferences: [
+            { fire: 0.5, forest: 0.5, river: 0.5, wind: 0.5 },
+            { bar: 0.5, beach: 0.5, samba: 0.5 },
+            { announcement: 0.5, attendant: 0.5, ambience: 0.5 }
+          ]
+        };
+        dbo.collection("userInfos").insertOne(userInfoObj, function (err, res) {
+          if (err) console.log(err);
+          console.log("1 document inserted");
+          db.close();
+        });
+      });
       res.send({registered: true, userName: userName})
     }
   })
@@ -212,21 +212,6 @@ app.get("/fetchuserpreference/:id", function(req, res){
 // Store sound preference
 app.post("/saveUserSoundPreference", (req,res) => {
   console.log(req.body.changedSoundPreferences)
-  // const doc = userModel.findOne({_id: req.body.uid})
-  // const key = 'soundPreferences.'+stringify(req.body.index)+'.content'
-  // const query = `"{"$set":{${key}:${JSON.stringify(req.body.changedSoundPreferences)}}}"`
-  // console.log(query)
-  // console.log(typeof doc, doc, doc.id)
-  // let soundName = "soundPreferences." + req.body.soundName
-  // let changedVolume = req.body.changedVolume
-  // userModel.updateOne({_id: req.body.uid}, {soundPreferences:{$set:{
-  // }}}, (err) => {
-  //   if (err) console.log(err)
-  // })
-  // userModel.updateOne({_id: req.body.uid}, JSON.stringify(query), (err) => {
-  //   if (err) console.log(err)
-  // })
-  // res.send(doc)
   data = JSON.stringify(req.body.changedSoundPreferences)
   if(req.body.index == 0){
     userModel.updateOne({_id: req.body.uid}, {$set:{"soundPreferences.0":req.body.changedSoundPreferences}}, (err) => {
@@ -241,6 +226,4 @@ app.post("/saveUserSoundPreference", (req,res) => {
       if (err) console.log(err)
     })
   }
-  // make req.body.changedSoundPreference string?
-
 })

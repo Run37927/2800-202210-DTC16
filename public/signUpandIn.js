@@ -4,6 +4,10 @@ const url = "http://localhost:6050"
 
  
  async function registerUser(){
+   if( $("#name").val().replace(" ", "").length == 0 || $("#email").val().replace(" ", "").length == 0 || $("#password").val().replace(" ", "").length == 0 ){
+    alert('Invalid information.')
+    location.href = "/signup"
+   }
      await $.ajax({
         url: `${url}/signuprequest`,
         type: "POST",
@@ -26,6 +30,10 @@ const url = "http://localhost:6050"
 }
 
 async function loginUser() {
+  if($("#email").val().replace(" ", "").length == 0 || $("#password").val().replace(" ", "").length == 0 ){
+    alert('Invalid information.')
+    location.href = "/login"
+   }
   await $.ajax({
      url: `${url}/requestlogin`,
      type: "POST",
