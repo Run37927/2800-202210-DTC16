@@ -4,7 +4,6 @@ const url = "http://localhost:6050"
 
  
  async function registerUser(){
-    console.log("registerUser() executed")
      await $.ajax({
         url: `${url}/signuprequest`,
         type: "POST",
@@ -13,12 +12,20 @@ const url = "http://localhost:6050"
           email: $("#email").val(),
           password: $("#password").val()
         },
-        success: location.href = "/login"
+        // success: location.href = "/login"
+        success: (data) => {
+          if(data.registered){
+             alert(`Account Created successfully.\n Welcome ${data.userName.split(' ')[0]}!`)
+             location.href = "/login"
+          }else{
+            alert('Creating account failed.')
+            location.href = "/signup"
+          }
+        }
       });
 }
 
 async function loginUser() {
-  console.log("loginUser() executed")
   await $.ajax({
      url: `${url}/requestlogin`,
      type: "POST",
@@ -31,13 +38,14 @@ async function loginUser() {
 }
 
 function routeUserLogin(data){
-  console.log(data.userIsAdmin)
+  if(!data.loginSuccess){
+    alert("Login failed")
+    location.href = "/login"
+  }
   if(data.userIsAdmin){
     location.href = `/admin/${data.userId}`
   }else if(!data.userIsAdmin){
     location.href = `/welcome/${data.userId}`
-  }else{
-    console.log("User not found")
   }
 }
 

@@ -36,6 +36,8 @@ const isAuth = (req,res,next) => {
   }
 }
 
+
+
 const mongoose = require("mongoose");
 const req = require("express/lib/request");
 const { stringify } = require("nodemon/lib/utils");
@@ -43,6 +45,13 @@ const { json } = require("express/lib/response");
 const MongoClient = require("mongodb").MongoClient;
 const dbUrl =
   "mongodb+srv://elee323:12341234@cluster0.8b8go.mongodb.net/2800-202210-DTC16?retryWrites=true&w=majority";
+
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+.then((ans) => {
+    console.log("DB Connected Successfully")
+  }).catch((err) => {
+    console.log("Error in the Connection")
+  })
 
 // mongoose.connect(
 //     dbUrl,
@@ -57,35 +66,6 @@ const dbUrl =
 
 app.get("/");
 
-
-// User Sign up
-app.post("/signuprequest", function (req, res) {
-  console.log("user regiestration requested", req.body);
-  userName = req.body.name;
-  userEmail = req.body.email;
-  userPassword = req.body.password;
-  MongoClient.connect(dbUrl, function (err, db) {
-    if (err) console.log(err);
-    var dbo = db.db("2800-202210-DTC16");
-    var userInfoObj = {
-      userName: `${userName}`,
-      userEmail: `${userEmail}`,
-      userPassword: `${userPassword}`,
-      userIsAdmin: false,
-      soundPreferences: [
-        { fire: 0.5, forest: 0.5, river: 0.5, wind: 0.5 },
-        { bar: 0.5, beach: 0.5, samba: 0.5 },
-        { announcement: 0.5, attendant: 0.5, ambience: 0.5 }
-      ]
-    };
-    dbo.collection("userInfos").insertOne(userInfoObj, function (err, res) {
-      if (err) console.log(err);
-      console.log("1 document inserted");
-      db.close();
-    });
-  });
-});
-
 // User Sign Up
 app.get('/signup', function(req, res){
   res.sendFile(__dirname + "/public/register.html")
@@ -97,13 +77,44 @@ app.get('/login', function(req, res){
   res.sendFile(__dirname + "/public/login.html")
 })
 
-mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-.then((ans) => {
-    console.log("DB Connected Successfully")
-  }).catch((err) => {
-    console.log("Error in the Connection")
+
+// User Sign up
+app.post("/signuprequest", function (req, res) {
+  console.log("user regiestration requested", req.body);
+  const userName = req.body.name;
+  const userEmail = req.body.email;
+  const userPassword = req.body.password;
+  userModel.find({ userEmail: req.body.email }, (err, userInfo) =>{
+    if (err) console.log(err)
+    if (userInfo.length != 0){
+      res.send({registered: false})
+    }else{
+      // MongoClient.connect(dbUrl, function (err, db) {
+      //   if (err) console.log(err);
+      //   var dbo = db.db("2800-202210-DTC16");
+      //   var userInfoObj = {
+      //     userName: `${userName}`,
+      //     userEmail: `${userEmail}`,
+      //     userPassword: `${userPassword}`,
+      //     userIsAdmin: false,
+      //     soundPreferences: [
+      //       { fire: 0.5, forest: 0.5, river: 0.5, wind: 0.5 },
+      //       { bar: 0.5, beach: 0.5, samba: 0.5 },
+      //       { announcement: 0.5, attendant: 0.5, ambience: 0.5 }
+      //     ]
+      //   };
+      //   dbo.collection("userInfos").insertOne(userInfoObj, function (err, res) {
+      //     if (err) console.log(err);
+      //     console.log("1 document inserted");
+      //     db.close();
+      //   });
+      // });
+      res.send({registered: true, userName: userName})
+    }
   })
-  const preferenceSchema = new mongoose.Schema()
+  
+});
+
 const userLoginSchema = new mongoose.Schema({
   userEmail: String,
   userPassword: String,
@@ -124,20 +135,18 @@ app.post("/requestlogin", function (req, res) {
   password = req.body.password;
   userModel.find(
     { $and: [{ userEmail: email }, { userPassword: password }] },
-    // { userEmail: email },
     function (err, userInfo) {
       if (err) console.log(err);
-    //   console.log(userInfo[0].userIsAdmin)
     if (userInfo.length != 0){
       req.session.isAuth = true;
-      res.send({userId: userInfo[0]._id, userIsAdmin: userInfo[0]._doc.userIsAdmin})
+      res.send({userId: userInfo[0]._id, userIsAdmin: userInfo[0]._doc.userIsAdmin, loginSuccess: true})
       if (userInfo[0]._doc.userIsAdmin) {
           console.log(userInfo[0]._id + " has logged in as an admin");
         } else {
         console.log(userInfo[0]._id + " has logged in as a norm user");
       }
     }else{
-        console.log("user info doesn't exist ")
+        res.send({loginSuccess: false})
     }
     }
   )
