@@ -34,6 +34,43 @@ function drinkMenu() {
     popup.classList.toggle("show");
   }
 
+// Moscow Mule Popup
+// function moscowMenu() {
+//     var popup = document.getElementById("moscowPopup");
+//     popup.classList.toggle("show");
+//   }
+
+// Pisco Sour Popup
+// function piscoMenu() {
+//     var popup = document.getElementById("myPopup");
+//     popup.classList.toggle("show");
+//   }
+
+// South Side Popup
+// function southMenu() {
+//     var popup = document.getElementById("myPopup");
+//     popup.classList.toggle("show");
+//   }
+
+// Gin Fizz Popup
+// function ginMenu() {
+//     var popup = document.getElementById("myPopup");
+//     popup.classList.toggle("show");
+//   }
+
+// Pina Colada Popup
+// function pinaMenu() {
+//     var popup = document.getElementById("myPopup");
+//     popup.classList.toggle("show");
+//   }
+
+// Wide Awake Popup
+// function wideMenu() {
+//     var popup = document.getElementById("myPopup");
+//     popup.classList.toggle("show");
+//   }
+
+
 // For PSbuttons, background bar audio
 const backgroundAudio = new Audio();
 backgroundAudio.src = "../audios/bar_large_busy_dance_music.mp3";

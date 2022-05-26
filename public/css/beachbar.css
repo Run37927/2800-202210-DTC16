@@ -287,7 +287,7 @@ div#vodka {
     overflow-y: auto;
     padding-top: 90px; /* Place content 60px from the top */
     transition: 0.5s;
-    background: url('/images/drinkmenu.png');
+    background: url('/images/drinkmenu3.png');
     background-size: cover;
 }
 
@@ -300,3 +300,75 @@ div#vodka {
     text-decoration: none;
     color: black;
   }
+
+.moscowMuleBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 9.5vw; top: 31vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.piscoSourBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 9.5vw; top: 43vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.southSideBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 9.5vw; top: 56vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.ginFizzBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 33vw; top: 31vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.pinaColadaBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 33vw; top: 43vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+.wideAwakeBtn {
+    /* width: 60px;
+    height: 60px; */
+    display:block;
+    position: absolute; left: 33vw; top: 56vh;
+    opacity: 0;
+    cursor:pointer;
+}
+
+/* Testing */
+/*div#moscowMuleImg {
+    /* height: 70%; */
+    /* width: 0; */
+    /* position: fixed;  */
+    /*z-index: 1; /* Stay on top */
+    /*top: 10vh; /* Stay at the top */
+    /* right: 20vw; */
+    /* background-color: #FFF; */
+    /* opacity: 0.9; */
+    /*overflow-x: hidden; /* Disable horizontal scroll */
+    /* overflow-y: auto; */
+    /*padding-top: 90px; /* Place content 60px from the top */
+    /* transition: 0.5s; */
+    /* background: url('/images/drinkmenu3.png'); */
+    /* background-size: cover; */
+/*}
