@@ -1,4 +1,6 @@
-import {url} from "./data.js" 
+// import {url} from "./data.js" 
+const url = "http://localhost:6050"
+
 
 // Home button to bring user back home
 function backHome() {
