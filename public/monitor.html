@@ -122,16 +122,17 @@
         <div id="location"></div>
 
         <div class="buttons">
+            <button id="saveUserSoundPrefenence">Save</button>
             <span class="audio-info">Flight annoucement</span>
-            <audio controls style="width: 20vw; height: 8vh;">
+            <audio onvolumechange="storeChangedVolume(this.id)" controls id="audio-announcement"  style="width: 20vw; height: 8vh;">
                 <source src="/audios/airplaneAnnoucement.mp3" type="audio/ogg">
             </audio>
             <span class="audio-info">Funny flight attendant</span>
-            <audio controls style="width: 20vw; height: 8vh;">
+            <audio onvolumechange="storeChangedVolume(this.id)" controls id="audio-attendant" style="width: 20vw; height: 8vh;">
                 <source src="/audios/funnyattendant.mp3" type="audio/mpeg">
             </audio>
             <span class="audio-info">Spaceship ambience</span>
-            <audio controls style="width: 20vw; height: 8vh;">
+            <audio onvolumechange="storeChangedVolume(this.id)" controls id="audio-ambience" style="width: 20vw; height: 8vh;">
                 <source src="/audios/starship.mp3" type="audio/mpeg">
             </audio>
         </div>

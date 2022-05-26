@@ -1,3 +1,4 @@
+const url = "http://localhost:6050"
 window.onload = getMyLocation;
 const blueCoords = [
     { lat: 25.774, lng: -60.19 },
@@ -224,6 +225,25 @@ function displayError(error) {
 const audio = new Audio();
 audio.src = "../audios/airplaneAnnoucement.mp3";
 
+function storeChangedVolume(){
+    $.ajax({
+        url: `${url}/saveUserSoundPreference`,
+        method: "post",
+        data: {
+            uid: window.location.href.split('/')[4],
+            changedSoundPreferences: {
+                announcement: parseFloat(document.getElementById("audio-announcement").volume),
+                attendant: parseFloat(document.getElementById("audio-attendant").volume),
+                ambience: parseFloat(document.getElementById("audio-ambience").volume)
+            },
+            index: 2
+        },
+        success: (data) => {
+            console.log(id.split('-')[1], document.getElementById(id).volume);
+            console.log(data)
+        }
+    })
+}
 
 function setup() {
     var alerted = true;
@@ -231,6 +251,17 @@ function setup() {
         alert("please rotate your phone right now");
     }
     alerted = false;
+    $.ajax({
+        url: `${url}/fetchuserpreference/${window.location.href.split('/')[4]}`,
+        method: "get",
+        success: async (data) =>{
+            data = data.soundPreferences[2]
+            document.getElementById("audio-announcement").volume = await data.announcement
+            document.getElementById("audio-attendant").volume = await data.attendant
+            document.getElementById("audio-ambience").volume = await data.ambience
+        }
+    })
+    $("#saveUserSoundPrefenence").click(storeChangedVolume)
 }
 
 $(document).ready(setup);

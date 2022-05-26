@@ -1,3 +1,5 @@
+const url = "http://localhost:6050"
+
 // Home button to bring user back home
 function backHome() {
     window.location.href = `/welcome/${window.location.href.split('/')[4]}`
@@ -68,11 +70,35 @@ drinkFiveAudio.src = "../audios/533846__therealrpb__get-a-drink.mp3"
 const sambaAudio = new Audio();
 sambaAudio.src = "../audios/music_david_gwyn_jones_i_wanna_be_near_trees_instrumental.mp3"
 
+
+
 // Volume Controller
 // const volume = document.querySelector("#volume");
 // volume.addEventListener("range", function(v){
 //     Audio.value = v.currentTarget.value / 100
 // });
+
+function storeChangedVolume(){
+    $.ajax({
+        url: `${url}/saveUserSoundPreference`,
+        method: "post",
+        data: {
+            uid: window.location.href.split('/')[4],
+            changedSoundPreferences: {
+                bar: parseFloat(document.getElementById("audio-bar").volume),
+                beach: parseFloat(document.getElementById("audio-beach").volume),
+                samba: parseFloat(document.getElementById("audio-samba").volume)
+            },
+            index: 1
+        },
+        success: (data) => {
+            console.log(id.split('-')[1], document.getElementById(id).volume);
+            console.log(data)
+        }
+    })
+}
+
+
 
 // Tells the user to rotate their phone
 function setup() {
@@ -81,6 +107,17 @@ function setup() {
         alert("Please Rotate Your Phone.");
     }
     alerted = false;
+    $.ajax({
+        url: `${url}/fetchuserpreference/${window.location.href.split('/')[4]}`,
+        method: "get",
+        success: async (data) =>{
+            data = data.soundPreferences[1]
+            document.getElementById("audio-bar").volume = await data.bar
+            document.getElementById("audio-beach").volume = await data.beach
+            document.getElementById("audio-samba").volume = await data.samba
+        }
+    })
+    $("#saveUserSoundPrefenence").click(storeChangedVolume)
 }
 
 $(document).ready(setup);

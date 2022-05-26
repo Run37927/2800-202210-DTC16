@@ -1,5 +1,7 @@
 const menuToggle = document.querySelector('.toggle');
 const showcase = document.querySelector('.showcase');
+const url = "http://localhost:6050"
+ 
 
 menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
@@ -110,6 +112,27 @@ function getQuote() {
     });
 }
 
+function storeChangedVolume(){
+    $.ajax({
+        url: `${url}/saveUserSoundPreference`,
+        method: "post",
+        data: {
+            uid: window.location.href.split('/')[4],
+            changedSoundPreferences: {
+                fire: parseFloat(document.getElementById("audio-fire").volume),
+                forest: parseFloat(document.getElementById("audio-forest").volume),
+                river: parseFloat(document.getElementById("audio-river").volume),
+                wind: parseFloat(document.getElementById("audio-wind").volume)
+            },
+            index: 0
+        },
+        success: (data) => {
+            console.log(id.split('-')[1], document.getElementById(id).volume);
+            console.log(data)
+        }
+    })
+}
+
 
 $(document).ready(function () {
     $("#new-quote").click(function () {
@@ -122,4 +145,16 @@ $(document).ready(function () {
     <br>
     <li><a href="/beachbar/${window.location.href.split('/')[4]}">Beach Bar</a></li>
 </ul>`)
+    $.ajax({
+        url: `${url}/fetchuserpreference/${window.location.href.split('/')[4]}`,
+        method: "get",
+        success: async (data) =>{
+            data = data.soundPreferences[0]
+            document.getElementById("audio-fire").volume = await data.fire
+            document.getElementById("audio-forest").volume = await data.forest
+            document.getElementById("audio-river").volume = await data.river
+            document.getElementById("audio-wind").volume = await data.wind
+        }
+    })
+    $("#saveUserSoundPrefenence").click(storeChangedVolume)
 });
