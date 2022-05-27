@@ -49,16 +49,17 @@ Technologies used for this project:
     - Beach Bar
     - https://www.flaticon.com/free-icon/beach-bar_860606# (favicon)
 
+- Backgrounds
+    - https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2208&q=80 (Camping)
+    - https://www.youtube.com/watch?v=DfHtiEuZZXw&ab_channel=DigitalMediaProductions (camp fire stock video)
+    - https://bigseventravel.com/wp-content/uploads/2019/11/Dream-Beach-Club.jpg (Beach Background)
+
 - Tutorials followed in the making of this project: 
     - https://www.youtube.com/watch?v=TuznhDaF3rw
     - https://www.youtube.com/watch?v=X1dz0xRbSJc
     - https://www.youtube.com/watch?v=nUUsUAPEjFc
     - https://getcssscan.com/css-buttons-examples
     - https://www.youtube.com/watch?v=iE_6pQ3RlZU (Beach Bar Popup Menu)
-- Backgrounds
-    - https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2208&q=80 (Camping)
-    - https://www.youtube.com/watch?v=DfHtiEuZZXw&ab_channel=DigitalMediaProductions (camp fire stock video)
-    - https://bigseventravel.com/wp-content/uploads/2019/11/Dream-Beach-Club.jpg (Beach Background)
 
 - Sound Content
     - Airplane
