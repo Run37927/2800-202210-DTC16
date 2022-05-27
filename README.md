@@ -1,7 +1,7 @@
 ﻿## DTC Team16 2800 Project
 ![Project Image](./public/images/banner.png)
 
-> A virtual experience for anyone who misses vacation
+> Our team, DTC16, is developing virtual experience webapp to help people who are impacted by social/physical reasons to relive their happiest moments with visual and audio augmentation.
 ---
 
 
@@ -25,9 +25,9 @@ Open the website, select one of the three outdoor experiences and enjoy!
 ---
 ## Technologies
 Technologies used for this project:
-* HTML, CSS
-* Javascript
-* express, node js, mongodb
+* HTML5, CSS3, Javascript
+* ExpressJS, Node.JS, MongoDB
+* Heroku
 ---
 
 ## References
