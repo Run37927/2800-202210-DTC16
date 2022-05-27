@@ -1,5 +1,5 @@
 ﻿## DTC Team16 2800 Project
-![Project Image](./images/banner.png)
+![Project Image](./public/images/banner.png)
 
 > A virtual experience for anyone who misses vacation
 ---
