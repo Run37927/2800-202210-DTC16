@@ -23,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  top: 43vh;
+  top: 41vh;
 }
 
 .soundtracks .audio-info {
