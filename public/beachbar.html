@@ -1,176 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Beach Bar</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/css/beachbar.css">
-        <link rel="icon" type="image/x-icon" href="/images/beachbarfavicon.ico" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <!-- Top Left Home/Stop All Buttons -->
-            <div class="leftNav">
-                <form>
-                    <!-- Brings you back to the landing page -->
-                    <input type="button" value="Home" id="home">
-                    <input type="button" value="Menu" id="menu">
-                </form>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beach Bar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/css/beachbar.css" />
+    <link rel="icon" type="image/x-icon" href="/images/beachbarfavicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Top Left Home/Menu Buttons -->
+    <div class="leftNav">
+      <form>
+        <!-- Brings you back to the landing page -->
+        <input type="button" value="Home" id="home" />
+        <input type="button" value="Menu" id="menu" />
+      </form>
+    </div>
 
-            <div id="drinkMenu">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
-                <button class="recipe" style="width:120px; height: 20px; border: 2px solid red;   position: absolute;
-                top: 32vh; left: 12vw; opacity: 0;"></button>
+    <div id="drinkMenu">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()"
+        >&times;</a
+      >
 
-                <!-- Moscow Mule Menu Item -->
-                <div class="moscowPopup" id="moscowPopup-1">
-                    <div class="moscowOverlay"></div>
-                    <div class="moscowContent">
-                        <div class="moscow-close-btn" onclick="moscowTogglePopup()">&times;</div>
-                    </div>
-                </div>
-                <button class="moscowMuleBtn" onclick="moscowTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
-
-                <!-- Pisco Sour Menu Item -->
-                <div class="piscoPopup" id="piscoPopup-1">
-                    <div class="piscoOverlay"></div>
-                    <div class="piscoContent">
-                        <div class="pisco-close-btn" onclick="piscoTogglePopup()">&times;</div>
-                    </div>
-                </div>
-                <button class="piscoSourBtn" onclick="piscoTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
-
-                <!-- South Side Menu Item -->
-                <div class="southPopup" id="southPopup-1">
-                    <div class="southOverlay"></div>
-                    <div class="southContent">
-                        <div class="south-close-btn" onclick="southTogglePopup()">&times;</div>
-                    </div>
-                </div>
-                <button class="southSideBtn" onclick="southTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
-                    
-                <!-- Gin Fizz Menu Item -->
-                <div class="ginPopup" id="ginPopup-1">
-                    <div class="ginOverlay"></div>
-                    <div class="ginContent">
-                        <div class="gin-close-btn" onclick="ginTogglePopup()">&times;</div>
-                    </div>
-                </div>
-                <button class="ginFizzBtn" onclick="ginTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>            
-
-                <!-- Pina Colada Menu Item -->
-                <div class="pinaPopup" id="pinaPopup-1">
-                    <div class="pinaOverlay"></div>
-                    <div class="pinaContent">
-                        <div class="pina-close-btn" onclick="pinaTogglePopup()">&times;</div>
-                    </div>
-                </div>
-                <button class="pinaColadaBtn" onclick="pinaTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
-
-                <!-- Wide Awake Menu Item -->
-                <div class="widePopup" id="widePopup-1">
-                    <div class="wideOverlay"></div>
-                    <div class="wideContent">
-                        <div class="wide-close-btn" onclick="wideTogglePopup()">&times;</div>
-                    </div>
-                </div>
-                <button class="wideAwakeBtn" onclick="wideTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>                  
-            </div>
-
-            <div class="soundtracks">
-                <button id="saveUserSoundPrefenence">Save</button>
-                <!-- Busy Bar Environment -->
-                <span class="audio-info">Busy Bar</span>
-                <audio controls style="width: 20vw; height: 8vh;" id="audio-bar"src="/audios/bar_large_busy_dance_music.mp3"
-                loop></audio>
-                <!-- Beach Environment with kids -->
-                <span class="audio-info">Beach</span>
-                <audio controls style="width: 20vw; height: 8vh;" id="audio-beach" src="/audios/191444__john-sipos__beach-goers-and-surf.mp3"
-                loop></audio>
-                <!-- Samba Music -->
-                <span class="audio-info">Samba Drums</span>
-                <audio controls style="width: 20vw; height: 8vh;" id="audio-samba" src="/audios/music_david_gwyn_jones_i_wanna_be_near_trees_instrumental.mp3"
-                loop></audio>
-                <!-- Volume Control -->
-                <!-- <li><input id="volume" type="range"></input></li> -->
-            </div>
-
-            <div id="vodka">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
-            </div>
-
-        <div class="PSbuttons">
-            <!-- <button class="playButton" onclick="backgroundAudio.play()">
-                <img src="/images/play.png" alt="play" width="75px" height="75px">
-            </button> -->
-            <button class="pauseBackgroundButton" onclick="wavesAudio.pause(), bartenderAudio.pause(), drinkOneAudio.pause(), drinkTwoAudio.pause(), drinkThreeAudio.pause(), drinkFourAudio.pause(), drinkFiveAudio.pause(), drinkSixAudio.pause(), drinkSevenAudio.pause(), drinkEightAudio.pause()">
-                <img src="/images/pause.png" alt="play" width="75px" height="75px">
-            </button>
+      <!-- Moscow Mule Menu Item -->
+      <div class="moscowPopup" id="moscowPopup-1">
+        <div class="moscowOverlay"></div>
+        <div class="moscowContent">
+          <div class="moscow-close-btn" onclick="moscowTogglePopup()">
+            &times;
+          </div>
         </div>
+      </div>
+      <button class="moscowMuleBtn" onclick="moscowTogglePopup()">
+        <img src="/images/just_a_shape.png" width="135px" height="23px" />
+      </button>
 
-        <div class="bartenderBtn">
-            <button class="playButton" onclick="bartenderAudio.play()">
-                <img src="/images/just_a_shape.png"  width="70px" height="110px"></button>
-
+      <!-- Pisco Sour Menu Item -->
+      <div class="piscoPopup" id="piscoPopup-1">
+        <div class="piscoOverlay"></div>
+        <div class="piscoContent">
+          <div class="pisco-close-btn" onclick="piscoTogglePopup()">
+            &times;
+          </div>
         </div>
+      </div>
+      <button class="piscoSourBtn" onclick="piscoTogglePopup()">
+        <img src="/images/just_a_shape.png" width="135px" height="23px" />
+      </button>
 
-        <div class="vodkaCokeBtn">
-            <button class="playButton" onclick="drinkOneAudio.play()">
-                <img src="/images/just_a_shape.png" width="45px" height="40px"></button>
-
+      <!-- South Side Menu Item -->
+      <div class="southPopup" id="southPopup-1">
+        <div class="southOverlay"></div>
+        <div class="southContent">
+          <div class="south-close-btn" onclick="southTogglePopup()">
+            &times;
+          </div>
         </div>
+      </div>
+      <button class="southSideBtn" onclick="southTogglePopup()">
+        <img src="/images/just_a_shape.png" width="135px" height="23px" />
+      </button>
 
-        <div class="champagneBtn">
-            <button class="playButton" onclick="drinkTwoAudio.play()">
-                <img src="/images/just_a_shape.png" width="80px" height="85px"></button>
-
+      <!-- Gin Fizz Menu Item -->
+      <div class="ginPopup" id="ginPopup-1">
+        <div class="ginOverlay"></div>
+        <div class="ginContent">
+          <div class="gin-close-btn" onclick="ginTogglePopup()">&times;</div>
         </div>
+      </div>
+      <button class="ginFizzBtn" onclick="ginTogglePopup()">
+        <img src="/images/just_a_shape.png" width="135px" height="23px" />
+      </button>
 
-        <div class="sodaBtn">
-            <button class="playButton" onclick="drinkThreeAudio.play()">
-                <img src="/images/just_a_shape.png" width="45px" height="40px"></button>
-
+      <!-- Pina Colada Menu Item -->
+      <div class="pinaPopup" id="pinaPopup-1">
+        <div class="pinaOverlay"></div>
+        <div class="pinaContent">
+          <div class="pina-close-btn" onclick="pinaTogglePopup()">&times;</div>
         </div>
+      </div>
+      <button class="pinaColadaBtn" onclick="pinaTogglePopup()">
+        <img src="/images/just_a_shape.png" width="135px" height="23px" />
+      </button>
 
-        <div class="beerBtn">
-            <button class="playButton" onclick="drinkFourAudio.play()">
-                <img src="/images/just_a_shape.png" width="100px" height="50px"></button>
-
+      <!-- Wide Awake Menu Item -->
+      <div class="widePopup" id="widePopup-1">
+        <div class="wideOverlay"></div>
+        <div class="wideContent">
+          <div class="wide-close-btn" onclick="wideTogglePopup()">&times;</div>
         </div>
+      </div>
+      <button class="wideAwakeBtn" onclick="wideTogglePopup()">
+        <img src="/images/just_a_shape.png" width="135px" height="23px" />
+      </button>
+    </div>
 
-        <div class="shotBtn">
-            <button class="playButton" onclick="drinkFiveAudio.play()">
-                <img src="/images/just_a_shape.png" width="145px" height="90px"></button>
+    <div class="soundtracks">
+      <button id="saveUserSoundPrefenence">Save</button>
+      <!-- Busy Bar Environment -->
+      <span class="audio-info">Busy Bar</span>
+      <audio
+        controls
+        style="width: 20vw; height: 8vh"
+        id="audio-bar"
+        src="/audios/bar_large_busy_dance_music.mp3"
+        loop
+      ></audio>
+      <!-- Beach Environment with kids -->
+      <span class="audio-info">Beach</span>
+      <audio
+        controls
+        style="width: 20vw; height: 8vh"
+        id="audio-beach"
+        src="/audios/191444__john-sipos__beach-goers-and-surf.mp3"
+        loop
+      ></audio>
+      <!-- Samba Music -->
+      <span class="audio-info">Samba Drums</span>
+      <audio
+        controls
+        style="width: 20vw; height: 8vh"
+        id="audio-samba"
+        src="/audios/music_david_gwyn_jones_i_wanna_be_near_trees_instrumental.mp3"
+        loop
+      ></audio>
+      <!-- Volume Control -->
+      <!-- <li><input id="volume" type="range"></input></li> -->
+    </div>
 
-        </div>
+    <div id="vodka">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()"
+        >&times;</a
+      >
+    </div>
 
-        <div class="wavesBtn">
-            <button class="playButton" onclick="wavesAudio.play()">
-                <img src="/images/just_a_shape.png" width="260px" height="60px"></button>
+    <div class="PSbuttons">
+      <button
+        class="pauseBackgroundButton"
+        onclick="wavesAudio.pause(), bartenderAudio.pause(), drinkOneAudio.pause(), drinkTwoAudio.pause(), drinkThreeAudio.pause(), drinkFourAudio.pause(), drinkFiveAudio.pause(), drinkSixAudio.pause(), drinkSevenAudio.pause(), drinkEightAudio.pause()"
+      >
+        <img src="/images/pause.png" alt="play" width="75px" height="75px" />
+      </button>
+    </div>
 
-        </div>
+    <div class="bartenderBtn">
+      <button class="playButton" onclick="bartenderAudio.play()">
+        <img src="/images/just_a_shape.png" width="70px" height="110px" />
+      </button>
+    </div>
 
-        <div class="redDrinkBtn">
-            <button class="playButton" onclick="drinkSixAudio.play()">
-                <img src="/images/just_a_shape.png" width="45px" height="40px"></button>
+    <div class="vodkaCokeBtn">
+      <button class="playButton" onclick="drinkOneAudio.play()">
+        <img src="/images/just_a_shape.png" width="45px" height="40px" />
+      </button>
+    </div>
 
-        </div>
+    <div class="champagneBtn">
+      <button class="playButton" onclick="drinkTwoAudio.play()">
+        <img src="/images/just_a_shape.png" width="80px" height="85px" />
+      </button>
+    </div>
 
-        <div class="blueDrinkBtn">
-            <button class="playButton" onclick="drinkSevenAudio.play()">
-                <img src="/images/just_a_shape.png" width="45px" height="40px"></button>
+    <div class="sodaBtn">
+      <button class="playButton" onclick="drinkThreeAudio.play()">
+        <img src="/images/just_a_shape.png" width="45px" height="40px" />
+      </button>
+    </div>
 
-        </div>
+    <div class="beerBtn">
+      <button class="playButton" onclick="drinkFourAudio.play()">
+        <img src="/images/just_a_shape.png" width="100px" height="50px" />
+      </button>
+    </div>
 
-        <div class="wineBtn">
-            <button class="playButton" onclick="drinkEightAudio.play()">
-                <img src="/images/just_a_shape.png" width="48px" height="88px"></button>
+    <div class="shotBtn">
+      <button class="playButton" onclick="drinkFiveAudio.play()">
+        <img src="/images/just_a_shape.png" width="145px" height="90px" />
+      </button>
+    </div>
 
-        </div>
+    <div class="wavesBtn">
+      <button class="playButton" onclick="wavesAudio.play()">
+        <img src="/images/just_a_shape.png" width="260px" height="60px" />
+      </button>
+    </div>
 
-        <script src="/beachbar.js"></script>
-    </body>
+    <div class="redDrinkBtn">
+      <button class="playButton" onclick="drinkSixAudio.play()">
+        <img src="/images/just_a_shape.png" width="45px" height="40px" />
+      </button>
+    </div>
+
+    <div class="blueDrinkBtn">
+      <button class="playButton" onclick="drinkSevenAudio.play()">
+        <img src="/images/just_a_shape.png" width="45px" height="40px" />
+      </button>
+    </div>
+
+    <div class="wineBtn">
+      <button class="playButton" onclick="drinkEightAudio.play()">
+        <img src="/images/just_a_shape.png" width="48px" height="88px" />
+      </button>
+    </div>
+
+    <script src="/beachbar.js"></script>
+  </body>
 </html>
