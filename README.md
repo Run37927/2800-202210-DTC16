@@ -20,10 +20,10 @@ A virtual experience webapp to help people who are impacted by social/physical r
 ---
 
 ## How-to-use
-install nodeJS https://nodejs.org/en/download/
-npm install
-node server.js or nodemon server.js
-find test log https://docs.google.com/spreadsheets/d/1dq-6vxPIx-yk3_ykuMaXUbZK8Ff39Xs3SpgaWSPAjaM/edit#gid=0
+* install nodeJS https://nodejs.org/en/download/
+* npm install
+* node server.js or nodemon server.js
+* find test log https://docs.google.com/spreadsheets/d/1dq-6vxPIx-yk3_ykuMaXUbZK8Ff39Xs3SpgaWSPAjaM/edit#gid=0
 
 ---
 ## Technologies
