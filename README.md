@@ -111,13 +111,27 @@ Content of the project folder:
 
 
 It has the following subfolders and files:
-├── .git                     # Folder for git repo
-├── images                   # Folder for images
-    /.jpg                # 
-├── scripts                  # Folder for scripts
-    /.js                 # 
-├── styles                   # Folder for styles
-    /.css                # 
+├── audios                    # Folder for audio files
+├── css                       # Folder for css files
+    /admin.css
+    /beachbar.css
+    /camp.css
+    /landing.css
+    /signup.css
+├── html                      # Folder for html files
+    /admin.html
+    /beachbar.html
+    /camp.html
+    /login.html
+    /monitor.html
+    /register.html
+    /welcomback.html
+├── images                    # Folder for images
+├── js                        # Folder for javascript files
+├── videos                    # Folder for video files
+    /campfire.mp4                 
+├── index.html                
+    
 
 
 
