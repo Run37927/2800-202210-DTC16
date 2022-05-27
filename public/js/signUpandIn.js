@@ -1,5 +1,3 @@
-//  const url = import "./data"
-//  import {url} from "./data.js" 
 const url = "https://imissmyvacay.herokuapp.com"
 
  

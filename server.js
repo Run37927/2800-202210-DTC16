@@ -37,6 +37,7 @@ const isAuth = (req,res,next) => {
 // connecting server with DB
 
 const mongoose = require("mongoose");
+const MongoClient = require("mongodb").MongoClient;
 const dbUrl =
   "mongodb+srv://elee323:12341234@cluster0.8b8go.mongodb.net/2800-202210-DTC16?retryWrites=true&w=majority";
 
