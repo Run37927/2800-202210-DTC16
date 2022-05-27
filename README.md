@@ -116,8 +116,8 @@ It has the following subfolders and files:
 ```
 ---
 ## Contributors
-* Edward Lee
-* Wallace Trinh
+* Edward Lee (elee323@my.bcit.ca)
+* Wallace Trinh (wallacetrinh1@outlook.com)
 * Brian Mak (brianmak.blue@gmail.com)
 * Hairun Huang (hairunhuang@Gmail.com)
 
