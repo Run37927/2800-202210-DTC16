@@ -15,7 +15,7 @@
 
 
 ## Description
-A virtual experience for anyone who misses vacation but cannot go
+A virtual experience webapp to help people who are impacted by social/physical reasons to relive their happiest moments with visual and audio augmentation.
 
 ---
 
@@ -102,8 +102,13 @@ Content of the project folder:
 ```
  Top level of project folder: 
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
+├── public                   # folder for static pages
+└── unittests
+└── pacakage-lock.json
+└── package.json
+└── server.js               # backend javascript file
 └── README.md
+
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
