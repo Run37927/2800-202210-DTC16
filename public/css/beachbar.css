@@ -557,13 +557,13 @@ div#vodka {
 
 .pinaPopup .pinaContent{
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transition: 0.2s;
     overflow-x: hidden; /* Disable horizontal scroll */
     overflow-y: auto;
     transform: translate(-50%, -50%) scale(0);
-    background: url('/images/pinecolada.png');
+    background: url('/images/pinacolada.png');
     background-size: cover;
     width: 440px;
     height: 260px;
