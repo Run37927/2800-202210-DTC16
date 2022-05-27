@@ -54,13 +54,13 @@ app.get("/");
 
 // User Sign Up
 app.get('/signup', function(req, res){
-  res.sendFile(__dirname + "/public/register.html")
+  res.sendFile(__dirname + "/public/html/register.html")
 })
 
 
 // User Login
 app.get('/login', function(req, res){
-  res.sendFile(__dirname + "/public/login.html")
+  res.sendFile(__dirname + "/public/html/login.html")
 })
 
 
@@ -154,7 +154,7 @@ app.get("/admin/:id", isAuth, function(req, res){
         res.redirect('/')
       }else if (userInfo[0]?.userIsAdmin){
         console.log("admin page sent to " + req.params.id)
-        res.sendFile(__dirname+"/public/admin.html")
+        res.sendFile(__dirname+"/public/html/admin.html")
       }
     })
     
@@ -176,26 +176,26 @@ app.get("/fetchuserdata", function(req, res) {
 // User webpage
 app.get("/welcome/:id", isAuth, function(req, res){
     console.log("beach page sent to " + req.params.id)
-    res.sendFile(__dirname+"/public/welcomeback.html", __dirname + "/public/images")
+    res.sendFile(__dirname+"/public/html/welcomeback.html", __dirname + "/public/images")
 })
 
 // Beachbar
 app.get("/beachbar/:id", isAuth, function(req, res){
   console.log("beachbar page sent to " + req.params.id)
-  res.sendFile(__dirname+"/public/beachbar.html", __dirname + "/public/images")
+  res.sendFile(__dirname+"/public/html/beachbar.html", __dirname + "/public/images")
 })
 
 // Camp 
 app.get("/camp/:id", isAuth, function(req, res){
   console.log("camp page sent to " + req.params.id)
-  res.sendFile(__dirname+"/public/camp.html", __dirname + "/public/images")
+  res.sendFile(__dirname+"/public/html/camp.html", __dirname + "/public/images")
 })
 
 
 // Airplane monitor 
 app.get("/monitor/:id", isAuth, function(req, res){
   console.log("monitor page sent to " + req.params.id)
-  res.sendFile(__dirname+"/public/monitor.html", __dirname + "/public/images")
+  res.sendFile(__dirname+"/public/html/monitor.html", __dirname + "/public/images")
 })
 
 // Get sound preference
