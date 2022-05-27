@@ -1,374 +1,684 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
-body{
-    background-image: url("/images/Dream-Beach-Club.jpeg");
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    /* background-size: 100%; */
-    font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
-    position: relative;
+body {
+  background-image: url("/images/Dream-Beach-Club.jpeg");
+  background-repeat: no-repeat;
+  background-position: 0 -28px;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond,
+    "Times New Roman", serif;
+  position: fixed;
+  overflow-x: hidden; /*Disable horizontal scroll */
+  overflow-y: auto;
 }
-
 
 .soundtracks {
-    position: absolute; left: 1vw;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    top: 50vh;
+  position: absolute;
+  left: 1vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  top: 50vh;
 }
 
 .soundtracks .audio-info {
-    color: #1f2246;
-    text-align: center;
-    text-shadow: 1px 1px 2px #FCFCFD, 0 0 1em #212550, 0 0 0.2em #36395A;
+  color: #1f2246;
+  text-align: center;
+  text-shadow: 1px 1px 2px #fcfcfd, 0 0 1em #212550, 0 0 0.2em #36395a;
 }
 
 /* For the Black play/stop buttons at the top right*/
 .PSbuttons {
-    position: absolute; 
-    top: 3vh;
-    right: 3vw;
-    display: flex;
-    flex-direction: row;
+  position: absolute;
+  top: 3vh;
+  right: 3vw;
+  display: flex;
+  flex-direction: row;
 }
 
 .playButton {
-    transition: transform 250ms ease-in-out, opacity 250ms linear;
-    border: none;
-    background: transparent;
+  transition: transform 250ms ease-in-out, opacity 250ms linear;
+  border: none;
+  background: transparent;
 }
 
 .pauseBackgroundButton {
-    transition: transform 250ms ease-in-out, opacity 250ms linear;
-    border: none;
-    background: transparent;
+  transition: transform 250ms ease-in-out, opacity 250ms linear;
+  border: none;
+  background: transparent;
 }
 
 .playButton:hover,
 .playButton:focus {
-    transform: scale(1.1);
-    opacity: .8;
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .pauseBackgroundButton:hover,
 .pauseBackgroundButton:focus {
-    transform: scale(1.1);
-    opacity: .8;
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
-
-
-
 .leftNav {
-    position: absolute;
-    
-    height: 10vh;
-    width: 15vw;
-    background-color: transparent;
+  position: absolute;
+
+  height: 10vh;
+  width: 15vw;
+  background-color: transparent;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 form input {
-    margin-top: 0.5rem;
-    margin-left: 1.5rem;
-    border: none;
-    align-items: center;
-    appearance: none;
-    background-color: #FCFCFD;
-    border-radius: 4px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #36395A;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono", monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow 0.15s, transform 0.15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
-    font-size: 18px;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  border: none;
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
 }
 
 form input:focus {
-    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
 }
 
 form input:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    transform: translateY(-2px);
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
 }
 
 form input:active {
-    box-shadow: #D6D6E7 0 3px 7px inset;
-    transform: translateY(2px);
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
-
-
-
-
-
-
-  /* Popup Menu */
+/* Popup Menu */
 
 .popup {
-    position: absolute; top: 22vh;
-    display: flex;
-    cursor: pointer;
+  position: absolute;
+  top: 22vh;
+  display: flex;
+  cursor: pointer;
+}
 
-  }
-  
+.popup .popuptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1vh 1vw 1vh 1vw;
+  position: absolute;
+  z-index: 1;
+  bottom: -400%;
+  /* left: 50%; */
+  /* margin-left: -80px; */
+}
 
-  .popup .popuptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 1vh 1vw 1vh 1vw;
-    position: absolute;
-    z-index: 1;
-    bottom: -400%;
-    /* left: 50%; */
-    /* margin-left: -80px; */
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* Toggle this class when clicking on the popup container (hide and show the popup) */
-  .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
+  to {
+    opacity: 1;
   }
-  
-  /* Add animation (fade in the popup) */
-  @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+  to {
+    opacity: 1;
   }
+}
 
 /* As per interaction button */
 /* Uncomment/comment the "opacity: 0; to make the white images invisible */
 .wavesBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 40px; */
-    display:block;
-    position: absolute; left: 0vw; top: 34vh;
-    cursor:pointer;
-    opacity: 0;
+  display: block;
+  position: absolute;
+  left: 0vw;
+  top: 34vh;
+  cursor: pointer;
+  opacity: 0;
 }
-
 
 .bartenderBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 91vw; top: 30vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 91vw;
+  top: 30vh;
+  opacity: 0;
+  cursor: pointer;
 }
-
 
 .vodkaCokeBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 68.5vw; top: 31vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 68.5vw;
+  top: 31vh;
+  opacity: 0;
+  cursor: pointer;
 }
-
 
 .champagneBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 81.5vw; top: 64vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 81.5vw;
+  top: 64vh;
+  opacity: 0;
+  cursor: pointer;
 }
-
 
 .sodaBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 71vw; top: 77vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 71vw;
+  top: 77vh;
+  opacity: 0;
+  cursor: pointer;
 }
 
-
 .beerBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 55vw; top: 28vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 55vw;
+  top: 28vh;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .shotBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 35vw; top: 58vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 35vw;
+  top: 58vh;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .blueDrinkBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 52vw; top: 52vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 52vw;
+  top: 52vh;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .redDrinkBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 56vw; top: 70.5vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 56vw;
+  top: 70.5vh;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .wineBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 63vw; top: 60vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 63vw;
+  top: 60vh;
+  opacity: 0;
+  cursor: pointer;
 }
 
 /* drinks menu */
 div#drinkMenu,
 div#vodka {
-    height: 70%;
-    width: 0;
-    position: fixed; 
-    z-index: 1; /* Stay on top */
-    top: 10vh; /* Stay at the top */
-    right: 20vw;
-    /* background-color: #FFF; */
-    opacity: 0.9;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    overflow-y: auto;
-    padding-top: 90px; /* Place content 60px from the top */
-    transition: 0.5s;
-    background: url('/images/drinkmenu3.png');
-    background-size: cover;
+  height: 77%;
+  width: 0;
+  position: fixed;
+  z-index: 1; /* Stay on top */
+  top: 10vh; /* Stay at the top */
+  right: 20vw;
+  /* background-color: #FFF; */
+  opacity: 0.9;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  padding-top: 90px; /* Place content 60px from the top */
+  transition: 0.5s;
+  background: url("/images/drinkmenu3.png");
+  background-size: cover;
 }
 
 #drinkMenu .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 40px;
-    margin-left: 50px;
-    text-decoration: none;
-    color: black;
-  }
+  position: absolute;
+  top: 12px;
+  right: 38px;
+  font-size: 40px;
+  margin-left: 40px;
+  text-decoration: none;
+  color: black;
+}
 
 .moscowMuleBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 9.5vw; top: 31vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 9.5vw;
+  top: 31vh;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.moscowPopup .moscowOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50vw;
+  height: 50vh;
+  /* z-index: 1; */
+  display: none;
+}
+
+.moscowPopup .moscowContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 0.2s;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  transform: scale(0);
+  background: url("/images/moscowmule.png");
+  background-size: cover;
+  width: 440px;
+  height: 260px;
+  /* z-index:2; */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.moscowPopup .moscow-close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.moscowPopup.active-1 .moscowOverlay {
+  display: block;
+}
+
+.moscowPopup.active-1 .moscowContent {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .piscoSourBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 9.5vw; top: 43vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 9.5vw;
+  top: 43vh;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.piscoPopup .piscoOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50vw;
+  height: 50vh;
+  /* z-index: 1; */
+  display: none;
+}
+
+.piscoPopup .piscoContent {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transition: 0.2s;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(0);
+  background: url("/images/piscosour.png");
+  background-size: cover;
+  width: 440px;
+  height: 260px;
+  /* z-index:2; */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.piscoPopup .pisco-close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.piscoPopup.active-2 .piscoOverlay {
+  display: block;
+}
+
+.piscoPopup.active-2 .piscoContent {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .southSideBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 9.5vw; top: 56vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 9.5vw;
+  top: 56vh;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.southPopup .southOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50vw;
+  height: 50vh;
+  /* z-index: 1; */
+  display: none;
+}
+
+.southPopup .southContent {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transition: 0.2s;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(0);
+  background: url("/images/southside.png");
+  background-size: cover;
+  width: 440px;
+  height: 260px;
+  /* z-index:2; */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.southPopup .south-close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.southPopup.active-3 .southOverlay {
+  display: block;
+}
+
+.southPopup.active-3 .southContent {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .ginFizzBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 33vw; top: 31vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 33vw;
+  top: 31vh;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ginPopup .ginOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50vw;
+  height: 50vh;
+  /* background: rgba(0, 0, 0, 0.7); */
+  /* z-index: 1; */
+  display: none;
+}
+
+.ginPopup .ginContent {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transition: 0.2s;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(0);
+  background: url("/images/ginfizz.png");
+  background-size: cover;
+  width: 440px;
+  height: 260px;
+  /* z-index:2; */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ginPopup .gin-close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.ginPopup.active-4 .ginOverlay {
+  display: block;
+}
+
+.ginPopup.active-4 .ginContent {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .pinaColadaBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 33vw; top: 43vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 33vw;
+  top: 43vh;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pinaPopup .pinaOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50vw;
+  height: 50vh;
+  /* z-index: 1; */
+  display: none;
+}
+
+.pinaPopup .pinaContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 0.2s;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(0);
+  background: url("/images/pinacolada.png");
+  background-size: cover;
+  width: 440px;
+  height: 260px;
+  /* z-index:2; */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pinaPopup .pina-close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.pinaPopup.active-5 .pinaOverlay {
+  display: block;
+}
+
+.pinaPopup.active-5 .pinaContent {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .wideAwakeBtn {
-    /* width: 60px;
+  /* width: 60px;
     height: 60px; */
-    display:block;
-    position: absolute; left: 33vw; top: 56vh;
-    opacity: 0;
-    cursor:pointer;
+  display: block;
+  position: absolute;
+  left: 33vw;
+  top: 56vh;
+  opacity: 0;
+  cursor: pointer;
 }
 
-/* Testing */
-/*div#moscowMuleImg {
-    /* height: 70%; */
-    /* width: 0; */
-    /* position: fixed;  */
-    /*z-index: 1; /* Stay on top */
-    /*top: 10vh; /* Stay at the top */
-    /* right: 20vw; */
-    /* background-color: #FFF; */
-    /* opacity: 0.9; */
-    /*overflow-x: hidden; /* Disable horizontal scroll */
-    /* overflow-y: auto; */
-    /*padding-top: 90px; /* Place content 60px from the top */
-    /* transition: 0.5s; */
-    /* background: url('/images/drinkmenu3.png'); */
-    /* background-size: cover; */
-/*}
+.widePopup .wideOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 50vw;
+  height: 50vh;
+  /* z-index: 1; */
+  display: none;
+}
+
+.widePopup .wideContent {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transition: 0.2s;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(0);
+  background: url("/images/wideawake.png");
+  background-size: cover;
+  width: 440px;
+  height: 260px;
+  /* z-index:2; */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.widePopup .wide-close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.widePopup.active-6 .wideOverlay {
+  display: block;
+}
+
+.widePopup.active-6 .wideContent {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}

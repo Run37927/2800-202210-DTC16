@@ -22,55 +22,35 @@ function openDrinksMenu() {
 const menuBtn = document.getElementById("menu");
 menuBtn.onclick = openDrinksMenu;
 
-
-// function openRecipe() {
-//     document.getElementById("vodka").style.width = "500px";
-// }
-// const recipeBtn = document.getElementById("recipe");
-// recipeBtn.onclick = openRecipe;
-
-
-// Popup Drink Button Menu
-function drinkMenu() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
-
 // Moscow Mule Popup
-// function moscowMenu() {
-//     var popup = document.getElementById("moscowPopup");
-//     popup.classList.toggle("show");
-//   }
+function moscowTogglePopup() {
+    document.getElementById("moscowPopup-1").classList.toggle("active-1");
+}
 
 // Pisco Sour Popup
-// function piscoMenu() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }
+function piscoTogglePopup() {
+    document.getElementById("piscoPopup-1").classList.toggle("active-2");
+}
 
 // South Side Popup
-// function southMenu() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }
+function southTogglePopup() {
+    document.getElementById("southPopup-1").classList.toggle("active-3");
+}
 
 // Gin Fizz Popup
-// function ginMenu() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }
+function ginTogglePopup() {
+    document.getElementById("ginPopup-1").classList.toggle("active-4");
+}
 
 // Pina Colada Popup
-// function pinaMenu() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }
+function pinaTogglePopup() {
+    document.getElementById("pinaPopup-1").classList.toggle("active-5");
+}
 
 // Wide Awake Popup
-// function wideMenu() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }
+function wideTogglePopup() {
+    document.getElementById("widePopup-1").classList.toggle("active-6");
+}
 
 
 // For PSbuttons, background bar audio
