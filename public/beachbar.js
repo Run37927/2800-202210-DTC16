@@ -1,5 +1,5 @@
 // import {url} from "./data.js" 
-const url = "http://localhost:6050"
+const url = "https://imissmyvacay.herokuapp.com"
 
 
 // Home button to bring user back home

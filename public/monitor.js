@@ -1,5 +1,5 @@
 // import {url} from "./data.js" 
-const url = "http://localhost:6050"
+const url = "https://imissmyvacay.herokuapp.com"
 
 window.onload = getMyLocation;
 const blueCoords = [
