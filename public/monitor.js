@@ -224,9 +224,6 @@ function displayError(error) {
 }
 
 
-const audio = new Audio();
-audio.src = "../audios/airplaneAnnoucement.mp3";
-
 function storeChangedVolume(){
     $.ajax({
         url: `${url}/saveUserSoundPreference`,
