@@ -22,21 +22,6 @@ function openDrinksMenu() {
 const menuBtn = document.getElementById("menu");
 menuBtn.onclick = openDrinksMenu;
 
-
-// function openRecipe() {
-//     document.getElementById("vodka").style.width = "500px";
-// }
-
-// const recipeBtn = document.getElementById("recipe");
-// recipeBtn.onclick = openRecipe;
-
-
-// Popup Drink Button Menu
-// function drinkMenu() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-//   }
-
 // Moscow Mule Popup
 function moscowTogglePopup() {
     document.getElementById("moscowPopup-1").classList.toggle("active-1");
