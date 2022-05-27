@@ -8,6 +8,7 @@
 * [Description](#general-info)
 * [How to use](#how-to-use)
 * [Technologies](#technologies)
+* [Features](#Features)
 * [References](#references)
 * [Contents](#contents)
 * [Contributors](#contributors)
@@ -32,7 +33,26 @@ Technologies used for this project:
 * ExpressJS, Node.JS, MongoDB
 * Heroku, Google Map API
 ---
+## Features
+(Virtual Air travel)
+- Select a variety of audios to play on the left side
+- Click save settings button to save personal audio setting
+- Click track button to display map on screen
+- Move around map to view locations
 
+(Virtual Outdoor)
+- Select a variety of audios to play on the left side
+- Click save settings button to save personal audio setting
+- Click new quote button for randomly generated quotes
+- Click start button to start timer, stop to pause, and reset to clear timer
+
+(Virtual Beach Hangout)
+- Select a variety of audios to play on the left side
+- Click save settings button to save personal audio setting
+- Click on drinks for interactive audio
+- Click on menu button to display drinks item
+- Click on specific drinks to display recipe
+---
 ## References
 - Banner: made with canva.com
 - Icons: bootstrap icons
@@ -49,17 +69,16 @@ Technologies used for this project:
     - Beach Bar
     - https://www.flaticon.com/free-icon/beach-bar_860606# (favicon)
 
-- Backgrounds
-    - https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2208&q=80 (Camping)
-    - https://www.youtube.com/watch?v=DfHtiEuZZXw&ab_channel=DigitalMediaProductions (camp fire stock video)
-    - https://bigseventravel.com/wp-content/uploads/2019/11/Dream-Beach-Club.jpg (Beach Background)
-
 - Tutorials followed in the making of this project: 
     - https://www.youtube.com/watch?v=TuznhDaF3rw
     - https://www.youtube.com/watch?v=X1dz0xRbSJc
     - https://www.youtube.com/watch?v=nUUsUAPEjFc
     - https://getcssscan.com/css-buttons-examples
     - https://www.youtube.com/watch?v=iE_6pQ3RlZU (Beach Bar Popup Menu)
+- Backgrounds
+    - https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2208&q=80 (Camping)
+    - https://www.youtube.com/watch?v=DfHtiEuZZXw&ab_channel=DigitalMediaProductions (camp fire stock video)
+    - https://bigseventravel.com/wp-content/uploads/2019/11/Dream-Beach-Club.jpg (Beach Background)
 
 - Sound Content
     - Airplane
@@ -112,27 +131,13 @@ Content of the project folder:
 
 
 It has the following subfolders and files:
-├── audios                    # Folder for audio files
-├── css                       # Folder for css files
-    /admin.css
-    /beachbar.css
-    /camp.css
-    /landing.css
-    /signup.css
-├── html                      # Folder for html files
-    /admin.html
-    /beachbar.html
-    /camp.html
-    /login.html
-    /monitor.html
-    /register.html
-    /welcomback.html
-├── images                    # Folder for images
-├── js                        # Folder for javascript files
-├── videos                    # Folder for video files
-    /campfire.mp4                 
-├── index.html                
-    
+├── .git                     # Folder for git repo
+├── images                   # Folder for images
+    /.jpg                # 
+├── scripts                  # Folder for scripts
+    /.js                 # 
+├── styles                   # Folder for styles
+    /.css                # 
 
 
 
