@@ -20,7 +20,10 @@ A virtual experience for anyone who misses vacation but cannot go
 ---
 
 ## How-to-use
-Open the website, select one of the three outdoor experiences and enjoy!
+install nodeJS https://nodejs.org/en/download/
+npm install
+node server.js or nodemon server.js
+find test log https://docs.google.com/spreadsheets/d/1dq-6vxPIx-yk3_ykuMaXUbZK8Ff39Xs3SpgaWSPAjaM/edit#gid=0
 
 ---
 ## Technologies
