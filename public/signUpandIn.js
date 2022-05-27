@@ -16,7 +16,6 @@ const url = "https://imissmyvacay.herokuapp.com"
           email: $("#email").val(),
           password: $("#password").val()
         },
-        // success: location.href = "/login"
         success: (data) => {
           if(data.registered){
              alert(`Account Created successfully.\n Welcome ${data.userName.split(' ')[0]}!`)

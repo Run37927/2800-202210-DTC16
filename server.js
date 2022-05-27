@@ -7,6 +7,9 @@ app.listen(process.env.PORT || 6050, function (err) {
   if (err) console.log(err);
 });
 
+
+// handlers 
+
 const bodyparser = require("body-parser");
 app.use(
   bodyparser.urlencoded({
@@ -17,8 +20,7 @@ app.use(
 app.use(session({
   secret: 'sshh', 
   saveUninitialized: false, 
-  resave: false,
-  // store: store
+  resave: false
 }));
 
 app.use(express.static(__dirname + "/public"));
@@ -32,12 +34,9 @@ const isAuth = (req,res,next) => {
 }
 
 
+// connecting server with DB
 
 const mongoose = require("mongoose");
-const req = require("express/lib/request");
-const { stringify } = require("nodemon/lib/utils");
-const { json } = require("express/lib/response");
-const MongoClient = require("mongodb").MongoClient;
 const dbUrl =
   "mongodb+srv://elee323:12341234@cluster0.8b8go.mongodb.net/2800-202210-DTC16?retryWrites=true&w=majority";
 
@@ -47,6 +46,9 @@ mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
   }).catch((err) => {
     console.log("Error in the Connection")
   })
+
+
+// Routers
 
 app.get("/");
 
@@ -99,6 +101,7 @@ app.post("/signuprequest", function (req, res) {
   
 });
 
+// creating user Schema for DB.
 const userLoginSchema = new mongoose.Schema({
   userEmail: String,
   userPassword: String,
@@ -139,7 +142,6 @@ app.get('/logout', (req,res) => {
   })
 })
 
-// TODO: check if the user is admin with DB
 // Admin webpage
 app.get("/admin/:id", isAuth, function(req, res){
   console.log(req.params.id)
@@ -158,6 +160,7 @@ app.get("/admin/:id", isAuth, function(req, res){
     
 })
 
+// Retreiving user info from DB to the admin page.
 app.get("/fetchuserdata", function(req, res) {
   
   userModel.find({ "userIsAdmin" : false}, function(err, userInfo) {
@@ -170,23 +173,26 @@ app.get("/fetchuserdata", function(req, res) {
   })
 })
 
-// TODO: check if the user is user with DB
 // User webpage
 app.get("/welcome/:id", isAuth, function(req, res){
     console.log("beach page sent to " + req.params.id)
     res.sendFile(__dirname+"/public/welcomeback.html", __dirname + "/public/images")
 })
 
+// Beachbar
 app.get("/beachbar/:id", isAuth, function(req, res){
   console.log("beachbar page sent to " + req.params.id)
   res.sendFile(__dirname+"/public/beachbar.html", __dirname + "/public/images")
 })
 
+// Camp 
 app.get("/camp/:id", isAuth, function(req, res){
   console.log("camp page sent to " + req.params.id)
   res.sendFile(__dirname+"/public/camp.html", __dirname + "/public/images")
 })
 
+
+// Airplane monitor 
 app.get("/monitor/:id", isAuth, function(req, res){
   console.log("monitor page sent to " + req.params.id)
   res.sendFile(__dirname+"/public/monitor.html", __dirname + "/public/images")
