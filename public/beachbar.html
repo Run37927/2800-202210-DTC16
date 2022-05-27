@@ -26,30 +26,58 @@
                 top: 32vh; left: 12vw; opacity: 0;"></button>
 
                 <!-- Moscow Mule Menu Item -->
-                <div id="moscowMuleImg">
-                    <button class="moscowMuleBtn" onclick="moscowPopup()">
-                    <img src="/images/just_a_shape.png" width="135px" height="23px"></button>
+                <div class="moscowPopup" id="moscowPopup-1">
+                    <div class="moscowOverlay"></div>
+                    <div class="moscowContent">
+                        <div class="moscow-close-btn" onclick="moscowTogglePopup()">&times;</div>
+                    </div>
                 </div>
+                <button class="moscowMuleBtn" onclick="moscowTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
 
                 <!-- Pisco Sour Menu Item -->
-                <button class="piscoSourBtn" onclick="PiscoPopup()">
-                <img src="/images/just_a_shape.png" width="135px" height="23px"></button>
+                <div class="piscoPopup" id="piscoPopup-1">
+                    <div class="piscoOverlay"></div>
+                    <div class="piscoContent">
+                        <div class="pisco-close-btn" onclick="piscoTogglePopup()">&times;</div>
+                    </div>
+                </div>
+                <button class="piscoSourBtn" onclick="piscoTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
 
                 <!-- South Side Menu Item -->
-                <button class="southSideBtn" onclick="southPopup()">
-                    <img src="/images/just_a_shape.png" width="135px" height="23px"></button>
+                <div class="southPopup" id="southPopup-1">
+                    <div class="southOverlay"></div>
+                    <div class="southContent">
+                        <div class="south-close-btn" onclick="southTogglePopup()">&times;</div>
+                    </div>
+                </div>
+                <button class="southSideBtn" onclick="southTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
                     
                 <!-- Gin Fizz Menu Item -->
-                <button class="ginFizzBtn" onclick="ginPopup()">
-                    <img src="/images/just_a_shape.png" width="135px" height="23px"></button>                    
+                <div class="ginPopup" id="ginPopup-1">
+                    <div class="ginOverlay"></div>
+                    <div class="ginContent">
+                        <div class="gin-close-btn" onclick="ginTogglePopup()">&times;</div>
+                    </div>
+                </div>
+                <button class="ginFizzBtn" onclick="ginTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>            
 
                 <!-- Pina Colada Menu Item -->
-                <button class="pinaColadaBtn" onclick="pinaPopup()">
-                    <img src="/images/just_a_shape.png" width="135px" height="23px"></button>
+                <div class="pinaPopup" id="pinaPopup-1">
+                    <div class="pinaOverlay"></div>
+                    <div class="pinaContent">
+                        <div class="pina-close-btn" onclick="pinaTogglePopup()">&times;</div>
+                    </div>
+                </div>
+                <button class="pinaColadaBtn" onclick="pinaTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>
 
                 <!-- Wide Awake Menu Item -->
-                <button class="wideAwakeBtn" onclick="widePopup()">
-                    <img src="/images/just_a_shape.png" width="135px" height="23px"></button>                    
+                <div class="widePopup" id="widePopup-1">
+                    <div class="wideOverlay"></div>
+                    <div class="wideContent">
+                        <div class="wide-close-btn" onclick="wideTogglePopup()">&times;</div>
+                    </div>
+                </div>
+                <button class="wideAwakeBtn" onclick="wideTogglePopup()"><img src="/images/just_a_shape.png" width="135px" height="23px"></button>                  
             </div>
 
             <div class="soundtracks">

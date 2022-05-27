@@ -11,6 +11,8 @@ body{
     /* background-size: 100%; */
     font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
     position: relative;
+    /* overflow-x: hidden; Disable horizontal scroll */
+    /* overflow-y: auto; */
 }
 
 
@@ -275,7 +277,7 @@ form input:active {
 /* drinks menu */
 div#drinkMenu,
 div#vodka {
-    height: 70%;
+    height: 77%;
     width: 0;
     position: fixed; 
     z-index: 1; /* Stay on top */
@@ -293,10 +295,10 @@ div#vodka {
 
 #drinkMenu .closebtn {
     position: absolute;
-    top: 0;
-    right: 25px;
+    top: 12px;
+    right: 38px;
     font-size: 40px;
-    margin-left: 50px;
+    margin-left: 40px;
     text-decoration: none;
     color: black;
   }
@@ -310,6 +312,55 @@ div#vodka {
     cursor:pointer;
 }
 
+.moscowPopup .moscowOverlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vw;
+    height: 50vh;
+    /* z-index: 1; */
+    display: none;
+}
+
+.moscowPopup .moscowContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 0.2s;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    transform:scale(0);
+    background: url('/images/moscowmule.png');
+    background-size: cover;
+    width: 440px;
+    height: 260px;
+    /* z-index:2; */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.moscowPopup .moscow-close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.moscowPopup.active-1 .moscowOverlay{
+    display: block;
+}
+
+.moscowPopup.active-1 .moscowContent{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%, -50%) scale(1)
+}
+
 .piscoSourBtn {
     /* width: 60px;
     height: 60px; */
@@ -317,6 +368,55 @@ div#vodka {
     position: absolute; left: 9.5vw; top: 43vh;
     opacity: 0;
     cursor:pointer;
+}
+
+.piscoPopup .piscoOverlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vw;
+    height: 50vh;
+    /* z-index: 1; */
+    display: none;
+}
+
+.piscoPopup .piscoContent{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transition: 0.2s;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    transform: translate(-50%, -50%) scale(0);
+    background: url('/images/piscosour.png');
+    background-size: cover;
+    width: 440px;
+    height: 260px;
+    /* z-index:2; */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.piscoPopup .pisco-close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.piscoPopup.active-2 .piscoOverlay{
+    display: block;
+}
+
+.piscoPopup.active-2 .piscoContent{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%, -50%) scale(1)
 }
 
 .southSideBtn {
@@ -328,6 +428,55 @@ div#vodka {
     cursor:pointer;
 }
 
+.southPopup .southOverlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vw;
+    height: 50vh;
+    /* z-index: 1; */
+    display: none;
+}
+
+.southPopup .southContent{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transition: 0.2s;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    transform: translate(-50%, -50%) scale(0);
+    background: url('/images/southside.png');
+    background-size: cover;
+    width: 440px;
+    height: 260px;
+    /* z-index:2; */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.southPopup .south-close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.southPopup.active-3 .southOverlay{
+    display: block;
+}
+
+.southPopup.active-3 .southContent{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%, -50%) scale(1)
+}
+
 .ginFizzBtn {
     /* width: 60px;
     height: 60px; */
@@ -335,6 +484,56 @@ div#vodka {
     position: absolute; left: 33vw; top: 31vh;
     opacity: 0;
     cursor:pointer;
+}
+
+.ginPopup .ginOverlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vw;
+    height: 50vh;
+    /* background: rgba(0, 0, 0, 0.7); */
+    /* z-index: 1; */
+    display: none;
+}
+
+.ginPopup .ginContent{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transition: 0.2s;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    transform: translate(-50%, -50%) scale(0);
+    background: url('/images/ginfizz.png');
+    background-size: cover;
+    width: 440px;
+    height: 260px;
+    /* z-index:2; */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.ginPopup .gin-close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.ginPopup.active-4 .ginOverlay{
+    display: block;
+}
+
+.ginPopup.active-4 .ginContent{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%, -50%) scale(1)
 }
 
 .pinaColadaBtn {
@@ -346,6 +545,55 @@ div#vodka {
     cursor:pointer;
 }
 
+.pinaPopup .pinaOverlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vw;
+    height: 50vh;
+    /* z-index: 1; */
+    display: none;
+}
+
+.pinaPopup .pinaContent{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transition: 0.2s;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    transform: translate(-50%, -50%) scale(0);
+    background: url('/images/pinecolada.png');
+    background-size: cover;
+    width: 440px;
+    height: 260px;
+    /* z-index:2; */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.pinaPopup .pina-close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.pinaPopup.active-5 .pinaOverlay{
+    display: block;
+}
+
+.pinaPopup.active-5 .pinaContent{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%, -50%) scale(1)
+}
+
 .wideAwakeBtn {
     /* width: 60px;
     height: 60px; */
@@ -355,20 +603,51 @@ div#vodka {
     cursor:pointer;
 }
 
-/* Testing */
-/*div#moscowMuleImg {
-    /* height: 70%; */
-    /* width: 0; */
-    /* position: fixed;  */
-    /*z-index: 1; /* Stay on top */
-    /*top: 10vh; /* Stay at the top */
-    /* right: 20vw; */
-    /* background-color: #FFF; */
-    /* opacity: 0.9; */
-    /*overflow-x: hidden; /* Disable horizontal scroll */
-    /* overflow-y: auto; */
-    /*padding-top: 90px; /* Place content 60px from the top */
-    /* transition: 0.5s; */
-    /* background: url('/images/drinkmenu3.png'); */
-    /* background-size: cover; */
-/*}
+.widePopup .wideOverlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50vw;
+    height: 50vh;
+    /* z-index: 1; */
+    display: none;
+}
+
+.widePopup .wideContent{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transition: 0.2s;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    transform: translate(-50%, -50%) scale(0);
+    background: url('/images/wideawake.png');
+    background-size: cover;
+    width: 440px;
+    height: 260px;
+    /* z-index:2; */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.widePopup .wide-close-btn{
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+.widePopup.active-6 .wideOverlay{
+    display: block;
+}
+
+.widePopup.active-6 .wideContent{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%, -50%) scale(1)
+}
