@@ -30,7 +30,7 @@ find test log https://docs.google.com/spreadsheets/d/1dq-6vxPIx-yk3_ykuMaXUbZK8F
 Technologies used for this project:
 * HTML5, CSS3, Javascript
 * ExpressJS, Node.JS, MongoDB
-* Heroku
+* Heroku, Google Map API
 ---
 
 ## References
