@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 header {
@@ -138,7 +138,6 @@ header .logo {
 .text a:hover {
     letter-spacing: 6px;
 }
-
 .social {
     position: absolute;
     z-index: 10;
@@ -300,11 +299,15 @@ body {
 
     .text h3 {
         font-size: 3em;
+        /* margin-bottom: 10px; */
+        margin-top: 20px;
+        padding-top: 30px;
     }
 
     .text audio {
-        padding-left: 100px;
-        zoom: 150%;
+       width: 65vw;
+       margin-top: 20px;
+       margin-bottom: 20px;
     }
 
     .toggle {

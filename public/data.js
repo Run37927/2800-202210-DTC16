@@ -1,1 +1,2 @@
-const url = "http://localhost:6050"
+export const url = "https://imissmyvacay.herokuapp.com/"
+
