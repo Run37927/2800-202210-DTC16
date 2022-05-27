@@ -1,5 +1,3 @@
-//  const url = import "./data"
-//  import {url} from "./data.js" 
 const url = "http://localhost:6050"
 
  
@@ -16,7 +14,6 @@ const url = "http://localhost:6050"
           email: $("#email").val(),
           password: $("#password").val()
         },
-        // success: location.href = "/login"
         success: (data) => {
           if(data.registered){
              alert(`Account Created successfully.\n Welcome ${data.userName.split(' ')[0]}!`)

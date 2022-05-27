@@ -1,4 +1,3 @@
-// import {url} from "./data.js" 
 const url = "http://localhost:6050"
 
 window.onload = getMyLocation;

@@ -1,7 +1,6 @@
 const menuToggle = document.querySelector('.toggle');
 const showcase = document.querySelector('.showcase');
 const url = "http://localhost:6050"
-// import {url} from "./data.js" 
  
 
 menuToggle.addEventListener('click', () => {
